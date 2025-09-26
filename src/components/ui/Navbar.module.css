@@ -1,0 +1,431 @@
+/* src/components/ui/Navbar.module.css */
+
+/* Base navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08),
+              0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Container */
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 72px; /* Increased height for better visibility */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: relative;
+}
+
+/* Logo */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo {
+  height: 36px; /* Increased from 22px */
+  width: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logoWrapper:hover .logo {
+  transform: scale(1.08);
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Increased gap */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navLink {
+  position: relative;
+  font-size: 15px; /* Increased from 13px */
+  font-weight: 500; /* Increased from 400 */
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.9); /* Darker for better visibility */
+  transition: color 0.2s ease;
+  cursor: pointer;
+  padding: 10px 16px; /* Added more padding for wider buttons */
+  border: none;
+  background: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navLink:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Services Dropdown */
+.servicesDropdown {
+  position: relative;
+}
+
+.servicesButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.servicesButton::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  transition: transform 0.2s ease;
+  margin-right: 4px;
+}
+
+.servicesDropdown:hover .servicesButton::after {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  min-width: 280px; /* Increased width */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+              0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.servicesDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 14px 20px; /* Increased padding */
+  text-align: left;
+  font-size: 14px; /* Increased font size */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  background: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dropdownItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: #000;
+  transition: height 0.2s ease;
+}
+
+.dropdownItem:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.06);
+  padding-left: 28px;
+}
+
+.dropdownItem:hover::before {
+  height: 70%;
+}
+
+/* CTA Button */
+.ctaButton {
+  background: #000;
+  color: #fff;
+  padding: 12px 32px; /* Increased padding for wider button */
+  border-radius: 24px;
+  font-size: 14px; /* Increased font size */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background: #1a1a1a;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.mobileMenuButton:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  border-radius: 2px;
+}
+
+.hamburgerLine:nth-child(1).active {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerLine:nth-child(2).active {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerLine:nth-child(3).active {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 49;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobileOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu Panel */
+.mobileMenu {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 400px;
+  background: #ffffff;
+  z-index: 50;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+}
+
+.mobileMenu.active {
+  right: 0;
+}
+
+.mobileMenuContent {
+  padding: 32px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mobileNavLink {
+  display: block;
+  font-size: 28px; /* Increased for better visibility */
+  font-weight: 500;
+  color: #000;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mobileNavLink:hover {
+  padding-left: 16px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.mobileServices {
+  margin-top: 12px;
+  padding-left: 24px;
+}
+
+.mobileServiceLink {
+  display: block;
+  font-size: 18px; /* Increased for better visibility */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 12px 0;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mobileServiceLink:hover {
+  color: #000;
+  padding-left: 12px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.mobileCTA {
+  margin-top: 40px;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 18px;
+  border-radius: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mobileCTA:hover {
+  background: #1a1a1a;
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navLinks,
+  .ctaButton {
+    display: none;
+  }
+  
+  .mobileMenuButton {
+    display: flex;
+  }
+  
+  .navContainer {
+    height: 64px;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
