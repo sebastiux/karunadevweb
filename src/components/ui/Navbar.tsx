@@ -17,21 +17,35 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, filter?: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      
+      // If there's a filter, dispatch a custom event after scrolling
+      if (filter) {
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('filterProjects', { detail: filter }));
+        }, 800); // Delay to ensure scroll completes
+      }
     }
     setIsMobileMenuOpen(false);
   };
 
-  const services = [
-    { name: 'Automation Solutions', id: 'automation' },
-    { name: 'Data Optimization', id: 'data' },
-    { name: 'Web Development', id: 'web' },
-    { name: 'SAAS Development', id: 'saas' },
-    { name: 'Hardware & IOT', id: 'hardware' },
+  const serviceFilters = [
+    { name: 'All Projects', id: 'work', filter: 'all' },
+    { name: 'Automation Solutions', id: 'work', filter: 'Automation' },
+    { name: 'Data Optimization', id: 'work', filter: 'Data Optimization' },
+    { name: 'Web Development', id: 'work', filter: 'Web Development' },
+    { name: 'SAAS Development', id: 'work', filter: 'SAAS Development' },
+    { name: 'Hardware & IOT', id: 'work', filter: 'Hardware & IoT' },
   ];
+
+  const openWhatsApp = () => {
+    const whatsappNumber = '527202533388';
+    const message = encodeURIComponent('Hi Karuna! I would like to discuss a project');
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  };
 
   return (
     <>
@@ -64,11 +78,14 @@ const Navbar = () => {
                 Services
               </button>
               <div className={styles.dropdownMenu}>
-                {services.map((service) => (
+                {serviceFilters.map((service) => (
                   <button
-                    key={service.id}
+                    key={service.filter}
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection(service.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      scrollToSection(service.id, service.filter);
+                    }}
                   >
                     {service.name}
                   </button>
@@ -80,7 +97,7 @@ const Navbar = () => {
               className={styles.navLink}
               onClick={() => scrollToSection('work')}
             >
-              Work
+              Projects
             </button>
 
             <button 
@@ -94,9 +111,9 @@ const Navbar = () => {
           {/* CTA Button */}
           <button 
             className={styles.ctaButton}
-            onClick={() => scrollToSection('contact')}
+            onClick={openWhatsApp}
           >
-            Get Started
+            WhatsApp Us
           </button>
 
           {/* Mobile Menu Button */}
@@ -137,11 +154,11 @@ const Navbar = () => {
               Services
             </button>
             <div className={styles.mobileServices}>
-              {services.map((service) => (
+              {serviceFilters.map((service) => (
                 <button
-                  key={service.id}
+                  key={service.filter}
                   className={styles.mobileServiceLink}
-                  onClick={() => scrollToSection(service.id)}
+                  onClick={() => scrollToSection(service.id, service.filter)}
                 >
                   {service.name}
                 </button>
@@ -153,7 +170,7 @@ const Navbar = () => {
             className={styles.mobileNavLink}
             onClick={() => scrollToSection('work')}
           >
-            Work
+            Projects
           </button>
 
           <button 
@@ -165,9 +182,9 @@ const Navbar = () => {
 
           <button 
             className={styles.mobileCTA}
-            onClick={() => scrollToSection('contact')}
+            onClick={openWhatsApp}
           >
-            Get Started
+            WhatsApp: +52 720 253 3388
           </button>
         </div>
       </div>

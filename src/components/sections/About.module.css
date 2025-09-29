@@ -1,0 +1,212 @@
+/* src/components/sections/About.module.css */
+
+.aboutSection {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 40px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.divider {
+  height: 1px;
+  background: #1a1a1a;
+  margin: 0 auto;
+  opacity: 0.2;
+}
+
+.mainContent {
+  margin-bottom: 80px;
+}
+
+.leadText {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #2a2a2a;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  font-weight: 300;
+  font-family: Georgia, serif;
+}
+
+.philosophyText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  font-weight: 300;
+  font-family: Georgia, serif;
+}
+
+.offerSection {
+  margin: 100px 0;
+}
+
+.offerTitle {
+  font-size: 32px;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 48px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.offerItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.offerItem:hover {
+  border-bottom-color: rgba(26, 26, 26, 0.2);
+}
+
+.offerNumber {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a8a8a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-width: 30px;
+}
+
+.offerText {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3a3a3a;
+  font-family: Georgia, serif;
+  flex: 1;
+}
+
+.closingStatement {
+  text-align: center;
+  margin-top: 80px;
+  padding: 40px 0;
+  position: relative;
+}
+
+.closingStatement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: #1a1a1a;
+  opacity: 0.2;
+}
+
+.closingText {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #2a2a2a;
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.animatedLine {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+  transform-origin: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 80px 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .leadText {
+    font-size: 18px;
+  }
+
+  .philosophyText {
+    font-size: 16px;
+  }
+
+  .offerGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .offerItem {
+    padding: 16px 0;
+  }
+
+  .offerTitle {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .closingText {
+    font-size: 18px;
+  }
+}
+
+/* Subtle animations */
+@media (prefers-reduced-motion: no-preference) {
+  .offerItem {
+    position: relative;
+  }
+
+  .offerItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: #1a1a1a;
+    transition: width 0.3s ease;
+  }
+
+  .offerItem:hover::after {
+    width: 100%;
+  }
+}
