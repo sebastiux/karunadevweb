@@ -48,7 +48,7 @@ const EnsoPhilosophy = () => {
     ctx.lineJoin = 'round';
     
     // Create points for complete circle
-    const points = [];
+    const points: { x: number; y: number; angle: number }[] = [];
     const startAngle = Math.PI * 0.5; // Start at bottom
     const endAngle = Math.PI * 0.5 + Math.PI * 2; // Full circle back to bottom
     

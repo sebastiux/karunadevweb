@@ -1,7 +1,7 @@
 // src/components/sections/ServicesGrid.tsx
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { AutomationIcon, DataIcon, WebIcon, SaasIcon, HardwareIcon } from '../icons/ServiceIcons';
+import { AutomationIcon, DataIcon, WebIcon, SaasIcon, HardwareIcon } from '../../assets/icons/ServiceIcons';
 import styles from './ServicesGrid.module.css';
 
 interface Service {

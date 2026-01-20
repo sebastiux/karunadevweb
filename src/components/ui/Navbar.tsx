@@ -1,6 +1,5 @@
 // src/components/ui/Navbar.tsx
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { KarunaLogo } from '../../assets';
 import styles from './Navbar.module.css';
 
@@ -34,11 +33,11 @@ const Navbar = () => {
 
   const serviceFilters = [
     { name: 'All Projects', id: 'work', filter: 'all' },
-    { name: 'Automation Solutions', id: 'work', filter: 'Automation' },
-    { name: 'Data Optimization', id: 'work', filter: 'Data Optimization' },
-    { name: 'Web Development', id: 'work', filter: 'Web Development' },
-    { name: 'SAAS Development', id: 'work', filter: 'SAAS Development' },
-    { name: 'Hardware & IOT', id: 'work', filter: 'Hardware & IoT' },
+    { name: 'Enterprise Chatbots', id: 'work', filter: 'Enterprise Chatbots' },
+    { name: 'Document AI & RAG', id: 'work', filter: 'Document AI & RAG' },
+    { name: 'LLM Integrations', id: 'work', filter: 'LLM Integrations' },
+    { name: 'AI Process Automation', id: 'work', filter: 'AI Process Automation' },
+    { name: 'Custom AI Solutions', id: 'work', filter: 'Custom AI Solutions' },
   ];
 
   const openWhatsApp = () => {

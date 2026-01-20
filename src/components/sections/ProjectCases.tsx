@@ -37,235 +37,267 @@ const ProjectCases = () => {
   }, []);
   
   const projects: Project[] = [
-    // SAAS Projects
+    // Enterprise Chatbots
     {
-      id: 'saas-1',
-      title: 'Restaurant Management System',
-      client: 'Example: Local Restaurant Chain',
-      category: 'SAAS Development',
-      description: 'Cloud-based ordering and inventory system',
-      challenge: 'Restaurant needed to manage orders, inventory, and staff schedules in one place.',
-      solution: 'Built a simple web app for order management, basic inventory tracking, and staff scheduling.',
+      id: 'chatbot-1',
+      title: 'Customer Service AI Assistant',
+      client: 'Example: Financial Services Firm',
+      category: 'Enterprise Chatbots',
+      description: 'Intelligent chatbot for 24/7 customer support',
+      challenge: 'Company received 5,000+ daily support inquiries with 40% being repetitive questions, overwhelming the support team.',
+      solution: 'Deployed a GPT-powered conversational AI integrated with their CRM and knowledge base, featuring seamless human handoff for complex issues.',
       results: [
-        'Orders processed 50% faster',
-        'Inventory waste reduced by 30%',
-        'Staff scheduling simplified',
-        'Accessible from any device'
+        '70% of inquiries resolved automatically',
+        'Average response time: under 10 seconds',
+        'Customer satisfaction increased by 35%',
+        'Support team handles 3x more complex cases'
       ],
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Heroku']
+      technologies: ['OpenAI GPT-4', 'LangChain', 'Python', 'Salesforce API']
     },
     {
-      id: 'saas-2',
-      title: 'Appointment Booking Platform',
-      client: 'Example: Beauty Salon',
-      category: 'SAAS Development',
-      description: 'Online booking system with SMS reminders',
-      challenge: 'Salon was losing customers due to phone-only booking and missed appointments.',
-      solution: 'Created online booking platform with automated SMS reminders and calendar integration.',
+      id: 'chatbot-2',
+      title: 'Internal HR Virtual Assistant',
+      client: 'Example: Enterprise Corporation',
+      category: 'Enterprise Chatbots',
+      description: 'AI assistant for employee HR queries',
+      challenge: 'HR team spent 60% of time answering repetitive policy questions from 2,000+ employees.',
+      solution: 'Built an internal Slack-integrated chatbot trained on company policies, benefits documentation, and HR procedures.',
       results: [
-        'No-shows reduced by 40%',
-        'Bookings increased by 25%',
-        'Staff saves 2 hours daily',
-        'Customers love the convenience'
+        'HR inquiry tickets reduced by 65%',
+        'Instant answers to policy questions',
+        'Multilingual support (EN/ES/PT)',
+        'Seamless integration with HRIS system'
       ],
-      technologies: ['Vue.js', 'Express', 'MongoDB', 'Twilio']
+      technologies: ['Claude API', 'Slack API', 'RAG', 'Pinecone']
     },
     {
-      id: 'saas-3',
-      title: 'Music Practice Tracker',
-      client: 'Example: Music School',
-      category: 'SAAS Development',
-      description: 'Student progress tracking app',
-      challenge: 'Teachers needed a way to track student practice time and progress between lessons.',
-      solution: 'Simple app where students log practice sessions and teachers can monitor progress.',
+      id: 'chatbot-3',
+      title: 'Sales Qualification Bot',
+      client: 'Example: B2B SaaS Company',
+      category: 'Enterprise Chatbots',
+      description: 'AI-powered lead qualification and scheduling',
+      challenge: 'Sales team wasted hours qualifying leads that weren\'t a good fit, reducing time for high-value prospects.',
+      solution: 'Conversational AI that qualifies leads through natural dialogue, schedules demos, and syncs with CRM automatically.',
       results: [
-        '100+ students actively using',
-        'Practice time increased 30%',
-        'Better student-teacher communication',
-        'Parents can track progress'
+        'Lead qualification time reduced by 80%',
+        'Sales team focuses on qualified leads only',
+        '45% increase in demo bookings',
+        'CRM automatically enriched with lead data'
       ],
-      technologies: ['React', 'Firebase', 'Chart.js']
-    },
-
-    // Hardware & IoT Projects
-    {
-      id: 'hardware-1',
-      title: 'Smart Home Temperature Monitor',
-      client: 'Example: Property Manager',
-      category: 'Hardware & IoT',
-      description: 'WiFi temperature sensors for rental properties',
-      challenge: 'Property manager needed to monitor temperature in multiple units to prevent pipe freezing.',
-      solution: 'Deployed simple WiFi sensors that send alerts when temperature drops below threshold.',
-      results: [
-        '10 properties monitored',
-        'Prevented 3 potential pipe bursts',
-        'Mobile app alerts',
-        'Installation in 1 hour per unit'
-      ],
-      technologies: ['ESP8266', 'MQTT', 'React Native']
-    },
-    {
-      id: 'hardware-2',
-      title: 'Basic MIDI Controller',
-      client: 'Example: Independent Musician',
-      category: 'Hardware & IoT',
-      description: 'Custom MIDI controller for live performances',
-      challenge: 'Musician needed affordable custom MIDI controller with specific button layout.',
-      solution: 'Built Arduino-based MIDI controller with customizable mapping.',
-      results: [
-        'Cost 70% less than commercial options',
-        'Exactly matched performer needs',
-        'USB plug-and-play',
-        'Durable for touring'
-      ],
-      technologies: ['Arduino', 'C++', 'MIDI Protocol']
-    },
-    {
-      id: 'hardware-3',
-      title: 'Door Access Control',
-      client: 'Example: Small Office',
-      category: 'Hardware & IoT',
-      description: 'RFID door access system',
-      challenge: 'Office needed to track who enters and restrict access to certain areas.',
-      solution: 'RFID card system with basic logging and time-based access rules.',
-      results: [
-        'Secure access for 50 employees',
-        'Entry logs for security',
-        'Easy card management',
-        'Cost-effective solution'
-      ],
-      technologies: ['RFID', 'Raspberry Pi', 'Python']
+      technologies: ['GPT-4', 'HubSpot API', 'Calendly', 'Node.js']
     },
 
-    // Automation Projects
+    // Document AI & RAG
+    {
+      id: 'rag-1',
+      title: 'Legal Document Analysis Platform',
+      client: 'Example: Law Firm',
+      category: 'Document AI & RAG',
+      description: 'AI-powered contract review and analysis',
+      challenge: 'Lawyers spent 8+ hours reviewing each contract manually, looking for specific clauses and potential risks.',
+      solution: 'RAG-based system that indexes contracts, identifies key clauses, flags risks, and answers questions about document content.',
+      results: [
+        'Contract review time reduced by 75%',
+        'Risk identification accuracy: 94%',
+        'Search across 10,000+ documents instantly',
+        'Billable hours increased by 40%'
+      ],
+      technologies: ['Claude API', 'LlamaIndex', 'PostgreSQL', 'Vector DB']
+    },
+    {
+      id: 'rag-2',
+      title: 'Technical Documentation Assistant',
+      client: 'Example: Software Company',
+      category: 'Document AI & RAG',
+      description: 'AI assistant for developer documentation',
+      challenge: 'Developers wasted hours searching through 500+ pages of technical docs and couldn\'t find accurate answers quickly.',
+      solution: 'Built a RAG system that indexes all documentation and provides accurate, cited answers with code examples.',
+      results: [
+        'Documentation queries resolved 90% faster',
+        'Developer onboarding time cut in half',
+        'Always up-to-date with latest docs',
+        'Reduced support tickets by 55%'
+      ],
+      technologies: ['OpenAI Embeddings', 'Pinecone', 'Next.js', 'MDX']
+    },
+    {
+      id: 'rag-3',
+      title: 'Compliance Knowledge Base',
+      client: 'Example: Healthcare Organization',
+      category: 'Document AI & RAG',
+      description: 'HIPAA compliance question answering system',
+      challenge: 'Staff struggled to navigate complex HIPAA regulations, leading to compliance risks and delayed decisions.',
+      solution: 'RAG system trained on regulatory documents that provides instant, accurate compliance guidance with source citations.',
+      results: [
+        'Compliance queries answered in seconds',
+        'Zero compliance violations since deployment',
+        'Training time reduced by 60%',
+        'Audit preparation streamlined'
+      ],
+      technologies: ['Claude API', 'ChromaDB', 'FastAPI', 'React']
+    },
+
+    // LLM Integrations
+    {
+      id: 'integration-1',
+      title: 'CRM Intelligence Layer',
+      client: 'Example: Sales Organization',
+      category: 'LLM Integrations',
+      description: 'AI-enhanced CRM with smart insights',
+      challenge: 'Sales reps spent more time updating CRM than selling, and valuable insights were buried in unstructured notes.',
+      solution: 'LLM integration that auto-generates call summaries, extracts action items, and provides deal insights directly in Salesforce.',
+      results: [
+        'CRM data entry reduced by 70%',
+        'Call notes generated automatically',
+        'Deal risk predictions 85% accurate',
+        'Pipeline visibility improved significantly'
+      ],
+      technologies: ['GPT-4', 'Salesforce API', 'Whisper', 'Python']
+    },
+    {
+      id: 'integration-2',
+      title: 'Email Intelligence System',
+      client: 'Example: Consulting Firm',
+      category: 'LLM Integrations',
+      description: 'AI-powered email drafting and analysis',
+      challenge: 'Consultants spent 2+ hours daily on email communication, drafting responses and summarizing long threads.',
+      solution: 'Gmail/Outlook plugin that summarizes threads, drafts contextual responses, and identifies action items automatically.',
+      results: [
+        'Email handling time reduced by 60%',
+        'Consistent professional tone across team',
+        'No important emails missed',
+        'Action items tracked automatically'
+      ],
+      technologies: ['Claude API', 'Google Workspace API', 'Chrome Extension', 'TypeScript']
+    },
+    {
+      id: 'integration-3',
+      title: 'Slack AI Copilot',
+      client: 'Example: Tech Startup',
+      category: 'LLM Integrations',
+      description: 'AI assistant integrated into team Slack',
+      challenge: 'Important decisions and context were lost in thousands of Slack messages, making knowledge sharing difficult.',
+      solution: 'Slack bot that answers questions about past conversations, summarizes channels, and helps draft messages.',
+      results: [
+        'Find any past decision in seconds',
+        'New hires onboard 50% faster',
+        'Meeting prep time reduced',
+        'Team knowledge preserved automatically'
+      ],
+      technologies: ['OpenAI API', 'Slack Bolt', 'Supabase', 'Node.js']
+    },
+
+    // AI Process Automation
     {
       id: 'automation-1',
-      title: 'Invoice Generation Automation',
-      client: 'Example: Freelance Agency',
-      category: 'Automation',
-      description: 'Automated monthly invoice creation',
-      challenge: 'Agency spent hours every month creating and sending invoices manually.',
-      solution: 'Script that pulls timesheet data and automatically generates and emails invoices.',
+      title: 'Invoice Processing Pipeline',
+      client: 'Example: Accounts Payable Dept',
+      category: 'AI Process Automation',
+      description: 'Automated invoice data extraction and processing',
+      challenge: 'Finance team manually processed 500+ invoices monthly, with frequent data entry errors and delays.',
+      solution: 'AI pipeline that extracts data from any invoice format, validates against POs, and pushes to accounting system.',
       results: [
-        'Invoice creation: 4 hours to 5 minutes',
-        'No more calculation errors',
-        'Automatic payment reminders',
-        'Professional PDF format'
+        'Invoice processing: 10 min to 30 seconds',
+        'Data accuracy improved to 99.5%',
+        'Processing capacity increased 10x',
+        'Early payment discounts captured'
       ],
-      technologies: ['Python', 'PDF Generation', 'Email API']
+      technologies: ['GPT-4 Vision', 'Claude API', 'QuickBooks API', 'Python']
     },
     {
       id: 'automation-2',
-      title: 'Social Media Scheduler',
-      client: 'Example: Small Business',
-      category: 'Automation',
-      description: 'Automated social media posting',
-      challenge: 'Business owner had no time to post consistently on social media.',
-      solution: 'Simple scheduler that posts pre-written content across platforms.',
+      title: 'Resume Screening System',
+      client: 'Example: Recruiting Agency',
+      category: 'AI Process Automation',
+      description: 'AI-powered candidate screening and ranking',
+      challenge: 'Recruiters reviewed 200+ resumes per role manually, missing qualified candidates and wasting hours on poor fits.',
+      solution: 'LLM system that screens resumes against job requirements, ranks candidates, and generates interview questions.',
       results: [
-        'Consistent daily posting',
-        'Engagement increased 40%',
-        'Saves 5 hours weekly',
-        'Posts to 3 platforms'
+        'Resume screening time reduced by 85%',
+        'Quality of hire improved by 30%',
+        'Bias reduced through structured analysis',
+        'Candidates matched to roles faster'
       ],
-      technologies: ['Node.js', 'Social APIs', 'Cron Jobs']
+      technologies: ['Claude API', 'Python', 'PostgreSQL', 'React']
     },
     {
       id: 'automation-3',
-      title: 'Email Response System',
-      client: 'Example: Customer Support',
-      category: 'Automation',
-      description: 'Auto-categorize and respond to common emails',
-      challenge: 'Support team received 100+ emails daily with many repetitive questions.',
-      solution: 'System that categorizes emails and sends template responses for common questions.',
+      title: 'Report Generation Engine',
+      client: 'Example: Analytics Team',
+      category: 'AI Process Automation',
+      description: 'Automated business report writing',
+      challenge: 'Analysts spent 10+ hours weekly writing repetitive reports from the same data sources.',
+      solution: 'System that pulls data from multiple sources, generates narrative insights, and produces formatted reports automatically.',
       results: [
-        '60% emails handled automatically',
-        'Response time under 1 minute',
-        'Team focuses on complex issues',
-        'Customer satisfaction improved'
+        'Report generation: 4 hours to 5 minutes',
+        'Consistent quality and formatting',
+        'Analysts focus on strategic insights',
+        'Reports delivered on schedule always'
       ],
-      technologies: ['Python', 'Gmail API', 'NLP Basics']
+      technologies: ['GPT-4', 'Python', 'Tableau API', 'Jinja2']
     },
 
-    // Data Projects
+    // Custom AI Solutions
     {
-      id: 'data-1',
-      title: 'Sales Dashboard',
-      client: 'Example: E-commerce Store',
-      category: 'Data Optimization',
-      description: 'Simple analytics dashboard',
-      challenge: 'Store owner couldn\'t easily see which products were selling best.',
-      solution: 'Dashboard showing sales trends, top products, and basic customer insights.',
+      id: 'custom-1',
+      title: 'Product Recommendation Engine',
+      client: 'Example: E-commerce Platform',
+      category: 'Custom AI Solutions',
+      description: 'LLM-powered personalized recommendations',
+      challenge: 'Generic recommendations weren\'t converting; customers wanted personalized suggestions based on their unique needs.',
+      solution: 'Conversational recommendation system that understands customer preferences through natural dialogue and suggests products.',
       results: [
-        'Daily sales visible at a glance',
-        'Identified best-selling products',
-        'Better inventory decisions',
-        'Mobile-friendly dashboard'
+        'Conversion rate increased by 40%',
+        'Average order value up 25%',
+        'Customer engagement doubled',
+        'Return rate decreased by 15%'
       ],
-      technologies: ['Google Sheets API', 'Chart.js', 'React']
+      technologies: ['Claude API', 'Recommendation Systems', 'React', 'Redis']
     },
     {
-      id: 'data-2',
-      title: 'Customer Feedback Analysis',
-      client: 'Example: Service Company',
-      category: 'Data Optimization',
-      description: 'Organize and analyze customer reviews',
-      challenge: 'Company had hundreds of reviews scattered across platforms with no overview.',
-      solution: 'Tool that collects reviews and identifies common themes and sentiment.',
+      id: 'custom-2',
+      title: 'Code Review Assistant',
+      client: 'Example: Development Team',
+      category: 'Custom AI Solutions',
+      description: 'AI-powered code review and suggestions',
+      challenge: 'Code reviews were bottlenecking development; senior developers spent 30% of time reviewing junior code.',
+      solution: 'GitHub integration that provides instant code review, suggests improvements, and catches bugs before human review.',
       results: [
-        'All reviews in one place',
-        'Identified top 5 improvement areas',
-        'Response rate improved',
-        'Monthly trend reports'
+        'Code review cycle reduced by 60%',
+        'Bug detection improved by 45%',
+        'Junior developer skills improved faster',
+        'Senior devs focus on architecture'
       ],
-      technologies: ['Python', 'Basic NLP', 'PostgreSQL']
-    },
-
-    // Web Development Projects
-    {
-      id: 'web-1',
-      title: 'Portfolio Website',
-      client: 'Example: Creative Professional',
-      category: 'Web Development',
-      description: 'Clean, responsive portfolio site',
-      challenge: 'Designer needed professional online presence to showcase work.',
-      solution: 'Built fast, SEO-optimized portfolio with contact form and project galleries.',
-      results: [
-        'Loads in under 2 seconds',
-        'Mobile-responsive design',
-        '3x more client inquiries',
-        'Easy to update content'
-      ],
-      technologies: ['Next.js', 'Tailwind CSS', 'Vercel']
+      technologies: ['GPT-4', 'GitHub API', 'AST Parsing', 'Python']
     },
     {
-      id: 'web-2',
-      title: 'Local Business Website',
-      client: 'Example: Dental Clinic',
-      category: 'Web Development',
-      description: 'Informational website with appointment request',
-      challenge: 'Clinic had no online presence and was losing patients to competitors.',
-      solution: 'Professional website with services, team info, and appointment request form.',
+      id: 'custom-3',
+      title: 'Meeting Intelligence Platform',
+      client: 'Example: Remote-First Company',
+      category: 'Custom AI Solutions',
+      description: 'AI meeting transcription and insights',
+      challenge: 'Important meeting decisions were lost, action items forgotten, and team members missing meetings lacked context.',
+      solution: 'Platform that transcribes meetings, generates summaries, extracts action items, and makes meetings searchable.',
       results: [
-        'First page on Google locally',
-        '20+ appointment requests weekly',
-        'Professional appearance',
-        'Patients find info easily'
+        'Meeting notes generated automatically',
+        'Action item completion up 70%',
+        'Search any past meeting instantly',
+        'Async team members stay informed'
       ],
-      technologies: ['WordPress', 'Custom Theme', 'SEO']
+      technologies: ['Whisper', 'Claude API', 'Supabase', 'Next.js']
     }
   ];
 
-  const categories = ['all', 'SAAS Development', 'Hardware & IoT', 'Automation', 'Data Optimization', 'Web Development'];
+  const categories = ['all', 'Enterprise Chatbots', 'Document AI & RAG', 'LLM Integrations', 'AI Process Automation', 'Custom AI Solutions'];
   
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(p => p.category === filter);
 
   const openWhatsApp = (projectTitle?: string) => {
-    const baseMessage = projectTitle 
-      ? `Hi Karuna! I'm interested in discussing a project similar to "${projectTitle}"`
-      : `Hi Karuna! I'd like to discuss a project for my business`;
+    const baseMessage = projectTitle
+      ? `Hi Karuna! I'm interested in discussing an AI solution similar to "${projectTitle}"`
+      : `Hi Karuna! I'd like to discuss AI/LLM solutions for my business`;
     const encodedMessage = encodeURIComponent(baseMessage);
     window.open(`${whatsappLink}?text=${encodedMessage}`, '_blank');
   };
@@ -280,12 +312,12 @@ const ProjectCases = () => {
           viewport={{ once: true }}
           className={styles.header}
         >
-          <h2 className={styles.title}>What We Can Build For You</h2>
+          <h2 className={styles.title}>Corporate LLM Solutions</h2>
           <div className={styles.disclaimer}>
             <p className={styles.disclaimerText}>
-              <strong>These are example projects</strong> showing the type of solutions we create. 
-              Every project is custom-built to match your specific needs and budget. 
-              No project is too small — we love helping businesses grow.
+              <strong>These are example projects</strong> showcasing our expertise in LLM applications and AI integrations.
+              From intelligent chatbots to document processing systems, we build custom AI solutions
+              that transform how enterprises operate.
             </p>
             <button 
               onClick={() => openWhatsApp()}
@@ -496,7 +528,7 @@ const ProjectModal = ({
           {/* CTA */}
           <div className={styles.ctaSection}>
             <p className={styles.ctaPrompt}>
-              Ready to build something for your business?
+              Ready to transform your business with AI?
             </p>
             <button 
               className={styles.modalWhatsappButton}
