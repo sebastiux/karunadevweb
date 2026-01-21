@@ -33,11 +33,8 @@ const Navbar = () => {
 
   const serviceFilters = [
     { name: 'All Projects', id: 'work', filter: 'all' },
-    { name: 'Enterprise Chatbots', id: 'work', filter: 'Enterprise Chatbots' },
-    { name: 'Document AI & RAG', id: 'work', filter: 'Document AI & RAG' },
-    { name: 'LLM Integrations', id: 'work', filter: 'LLM Integrations' },
-    { name: 'AI Process Automation', id: 'work', filter: 'AI Process Automation' },
-    { name: 'Custom AI Solutions', id: 'work', filter: 'Custom AI Solutions' },
+    { name: 'AI Education', id: 'work', filter: 'AI Education Platform' },
+    { name: 'Chatbot Automation', id: 'work', filter: 'Chatbot Automation' },
   ];
 
   const openWhatsApp = () => {

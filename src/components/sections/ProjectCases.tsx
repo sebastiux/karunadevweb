@@ -37,258 +37,43 @@ const ProjectCases = () => {
   }, []);
   
   const projects: Project[] = [
-    // Enterprise Chatbots
+    // NIO Learning
     {
-      id: 'chatbot-1',
-      title: 'Customer Service AI Assistant',
-      client: 'Example: Financial Services Firm',
-      category: 'Enterprise Chatbots',
-      description: 'Intelligent chatbot for 24/7 customer support',
-      challenge: 'Company received 5,000+ daily support inquiries with 40% being repetitive questions, overwhelming the support team.',
-      solution: 'Deployed a GPT-powered conversational AI integrated with their CRM and knowledge base, featuring seamless human handoff for complex issues.',
+      id: 'nio-learning',
+      title: 'NIO Learning',
+      client: 'niolearning.com',
+      category: 'AI Education Platform',
+      description: 'One of the first AI-powered education platforms in Latin America',
+      challenge: 'Traditional education platforms lacked personalization and couldn\'t adapt to individual learning styles, leaving students struggling to keep pace or feeling unchallenged.',
+      solution: 'We developed and scaled NIO Learning from the ground up — an AI-powered education platform that personalizes learning paths, adapts content difficulty in real-time, and provides intelligent tutoring assistance to students across Latin America.',
       results: [
-        '70% of inquiries resolved automatically',
-        'Average response time: under 10 seconds',
-        'Customer satisfaction increased by 35%',
-        'Support team handles 3x more complex cases'
+        'Pioneer AI education platform in LATAM',
+        'Personalized learning paths for each student',
+        'Real-time content adaptation',
+        'Scalable architecture serving thousands of users'
       ],
-      technologies: ['OpenAI GPT-4', 'LangChain', 'Python', 'Salesforce API']
+      technologies: ['AI/ML', 'LLM Integration', 'React', 'Node.js', 'Cloud Infrastructure']
     },
+    // Crickett
     {
-      id: 'chatbot-2',
-      title: 'Internal HR Virtual Assistant',
-      client: 'Example: Enterprise Corporation',
-      category: 'Enterprise Chatbots',
-      description: 'AI assistant for employee HR queries',
-      challenge: 'HR team spent 60% of time answering repetitive policy questions from 2,000+ employees.',
-      solution: 'Built an internal Slack-integrated chatbot trained on company policies, benefits documentation, and HR procedures.',
+      id: 'crickett',
+      title: 'Crickett',
+      client: 'crickett.com.mx',
+      category: 'Chatbot Automation',
+      description: 'AI automation tool for lead capture — plug and use, no flow design needed',
+      challenge: 'Entrepreneurs and small businesses needed chatbot automation but were overwhelmed by complex flow builders, technical setup, and expensive solutions that required constant maintenance.',
+      solution: 'We built Crickett — an AI chatbot automation tool that\'s ready to use out of the box. Just connect it to your website and WhatsApp, and start capturing leads instantly. No flow design, no technical knowledge required. Pure plug-and-play automation.',
       results: [
-        'HR inquiry tickets reduced by 65%',
-        'Instant answers to policy questions',
-        'Multilingual support (EN/ES/PT)',
-        'Seamless integration with HRIS system'
+        'Zero-configuration chatbot deployment',
+        'Website + WhatsApp integration',
+        'Instant lead capture automation',
+        'Built for entrepreneurs and SMBs'
       ],
-      technologies: ['Claude API', 'Slack API', 'RAG', 'Pinecone']
-    },
-    {
-      id: 'chatbot-3',
-      title: 'Sales Qualification Bot',
-      client: 'Example: B2B SaaS Company',
-      category: 'Enterprise Chatbots',
-      description: 'AI-powered lead qualification and scheduling',
-      challenge: 'Sales team wasted hours qualifying leads that weren\'t a good fit, reducing time for high-value prospects.',
-      solution: 'Conversational AI that qualifies leads through natural dialogue, schedules demos, and syncs with CRM automatically.',
-      results: [
-        'Lead qualification time reduced by 80%',
-        'Sales team focuses on qualified leads only',
-        '45% increase in demo bookings',
-        'CRM automatically enriched with lead data'
-      ],
-      technologies: ['GPT-4', 'HubSpot API', 'Calendly', 'Node.js']
-    },
-
-    // Document AI & RAG
-    {
-      id: 'rag-1',
-      title: 'Legal Document Analysis Platform',
-      client: 'Example: Law Firm',
-      category: 'Document AI & RAG',
-      description: 'AI-powered contract review and analysis',
-      challenge: 'Lawyers spent 8+ hours reviewing each contract manually, looking for specific clauses and potential risks.',
-      solution: 'RAG-based system that indexes contracts, identifies key clauses, flags risks, and answers questions about document content.',
-      results: [
-        'Contract review time reduced by 75%',
-        'Risk identification accuracy: 94%',
-        'Search across 10,000+ documents instantly',
-        'Billable hours increased by 40%'
-      ],
-      technologies: ['Claude API', 'LlamaIndex', 'PostgreSQL', 'Vector DB']
-    },
-    {
-      id: 'rag-2',
-      title: 'Technical Documentation Assistant',
-      client: 'Example: Software Company',
-      category: 'Document AI & RAG',
-      description: 'AI assistant for developer documentation',
-      challenge: 'Developers wasted hours searching through 500+ pages of technical docs and couldn\'t find accurate answers quickly.',
-      solution: 'Built a RAG system that indexes all documentation and provides accurate, cited answers with code examples.',
-      results: [
-        'Documentation queries resolved 90% faster',
-        'Developer onboarding time cut in half',
-        'Always up-to-date with latest docs',
-        'Reduced support tickets by 55%'
-      ],
-      technologies: ['OpenAI Embeddings', 'Pinecone', 'Next.js', 'MDX']
-    },
-    {
-      id: 'rag-3',
-      title: 'Compliance Knowledge Base',
-      client: 'Example: Healthcare Organization',
-      category: 'Document AI & RAG',
-      description: 'HIPAA compliance question answering system',
-      challenge: 'Staff struggled to navigate complex HIPAA regulations, leading to compliance risks and delayed decisions.',
-      solution: 'RAG system trained on regulatory documents that provides instant, accurate compliance guidance with source citations.',
-      results: [
-        'Compliance queries answered in seconds',
-        'Zero compliance violations since deployment',
-        'Training time reduced by 60%',
-        'Audit preparation streamlined'
-      ],
-      technologies: ['Claude API', 'ChromaDB', 'FastAPI', 'React']
-    },
-
-    // LLM Integrations
-    {
-      id: 'integration-1',
-      title: 'CRM Intelligence Layer',
-      client: 'Example: Sales Organization',
-      category: 'LLM Integrations',
-      description: 'AI-enhanced CRM with smart insights',
-      challenge: 'Sales reps spent more time updating CRM than selling, and valuable insights were buried in unstructured notes.',
-      solution: 'LLM integration that auto-generates call summaries, extracts action items, and provides deal insights directly in Salesforce.',
-      results: [
-        'CRM data entry reduced by 70%',
-        'Call notes generated automatically',
-        'Deal risk predictions 85% accurate',
-        'Pipeline visibility improved significantly'
-      ],
-      technologies: ['GPT-4', 'Salesforce API', 'Whisper', 'Python']
-    },
-    {
-      id: 'integration-2',
-      title: 'Email Intelligence System',
-      client: 'Example: Consulting Firm',
-      category: 'LLM Integrations',
-      description: 'AI-powered email drafting and analysis',
-      challenge: 'Consultants spent 2+ hours daily on email communication, drafting responses and summarizing long threads.',
-      solution: 'Gmail/Outlook plugin that summarizes threads, drafts contextual responses, and identifies action items automatically.',
-      results: [
-        'Email handling time reduced by 60%',
-        'Consistent professional tone across team',
-        'No important emails missed',
-        'Action items tracked automatically'
-      ],
-      technologies: ['Claude API', 'Google Workspace API', 'Chrome Extension', 'TypeScript']
-    },
-    {
-      id: 'integration-3',
-      title: 'Slack AI Copilot',
-      client: 'Example: Tech Startup',
-      category: 'LLM Integrations',
-      description: 'AI assistant integrated into team Slack',
-      challenge: 'Important decisions and context were lost in thousands of Slack messages, making knowledge sharing difficult.',
-      solution: 'Slack bot that answers questions about past conversations, summarizes channels, and helps draft messages.',
-      results: [
-        'Find any past decision in seconds',
-        'New hires onboard 50% faster',
-        'Meeting prep time reduced',
-        'Team knowledge preserved automatically'
-      ],
-      technologies: ['OpenAI API', 'Slack Bolt', 'Supabase', 'Node.js']
-    },
-
-    // AI Process Automation
-    {
-      id: 'automation-1',
-      title: 'Invoice Processing Pipeline',
-      client: 'Example: Accounts Payable Dept',
-      category: 'AI Process Automation',
-      description: 'Automated invoice data extraction and processing',
-      challenge: 'Finance team manually processed 500+ invoices monthly, with frequent data entry errors and delays.',
-      solution: 'AI pipeline that extracts data from any invoice format, validates against POs, and pushes to accounting system.',
-      results: [
-        'Invoice processing: 10 min to 30 seconds',
-        'Data accuracy improved to 99.5%',
-        'Processing capacity increased 10x',
-        'Early payment discounts captured'
-      ],
-      technologies: ['GPT-4 Vision', 'Claude API', 'QuickBooks API', 'Python']
-    },
-    {
-      id: 'automation-2',
-      title: 'Resume Screening System',
-      client: 'Example: Recruiting Agency',
-      category: 'AI Process Automation',
-      description: 'AI-powered candidate screening and ranking',
-      challenge: 'Recruiters reviewed 200+ resumes per role manually, missing qualified candidates and wasting hours on poor fits.',
-      solution: 'LLM system that screens resumes against job requirements, ranks candidates, and generates interview questions.',
-      results: [
-        'Resume screening time reduced by 85%',
-        'Quality of hire improved by 30%',
-        'Bias reduced through structured analysis',
-        'Candidates matched to roles faster'
-      ],
-      technologies: ['Claude API', 'Python', 'PostgreSQL', 'React']
-    },
-    {
-      id: 'automation-3',
-      title: 'Report Generation Engine',
-      client: 'Example: Analytics Team',
-      category: 'AI Process Automation',
-      description: 'Automated business report writing',
-      challenge: 'Analysts spent 10+ hours weekly writing repetitive reports from the same data sources.',
-      solution: 'System that pulls data from multiple sources, generates narrative insights, and produces formatted reports automatically.',
-      results: [
-        'Report generation: 4 hours to 5 minutes',
-        'Consistent quality and formatting',
-        'Analysts focus on strategic insights',
-        'Reports delivered on schedule always'
-      ],
-      technologies: ['GPT-4', 'Python', 'Tableau API', 'Jinja2']
-    },
-
-    // Custom AI Solutions
-    {
-      id: 'custom-1',
-      title: 'Product Recommendation Engine',
-      client: 'Example: E-commerce Platform',
-      category: 'Custom AI Solutions',
-      description: 'LLM-powered personalized recommendations',
-      challenge: 'Generic recommendations weren\'t converting; customers wanted personalized suggestions based on their unique needs.',
-      solution: 'Conversational recommendation system that understands customer preferences through natural dialogue and suggests products.',
-      results: [
-        'Conversion rate increased by 40%',
-        'Average order value up 25%',
-        'Customer engagement doubled',
-        'Return rate decreased by 15%'
-      ],
-      technologies: ['Claude API', 'Recommendation Systems', 'React', 'Redis']
-    },
-    {
-      id: 'custom-2',
-      title: 'Code Review Assistant',
-      client: 'Example: Development Team',
-      category: 'Custom AI Solutions',
-      description: 'AI-powered code review and suggestions',
-      challenge: 'Code reviews were bottlenecking development; senior developers spent 30% of time reviewing junior code.',
-      solution: 'GitHub integration that provides instant code review, suggests improvements, and catches bugs before human review.',
-      results: [
-        'Code review cycle reduced by 60%',
-        'Bug detection improved by 45%',
-        'Junior developer skills improved faster',
-        'Senior devs focus on architecture'
-      ],
-      technologies: ['GPT-4', 'GitHub API', 'AST Parsing', 'Python']
-    },
-    {
-      id: 'custom-3',
-      title: 'Meeting Intelligence Platform',
-      client: 'Example: Remote-First Company',
-      category: 'Custom AI Solutions',
-      description: 'AI meeting transcription and insights',
-      challenge: 'Important meeting decisions were lost, action items forgotten, and team members missing meetings lacked context.',
-      solution: 'Platform that transcribes meetings, generates summaries, extracts action items, and makes meetings searchable.',
-      results: [
-        'Meeting notes generated automatically',
-        'Action item completion up 70%',
-        'Search any past meeting instantly',
-        'Async team members stay informed'
-      ],
-      technologies: ['Whisper', 'Claude API', 'Supabase', 'Next.js']
+      technologies: ['AI Chatbots', 'WhatsApp API', 'Web Embedding', 'Lead Automation']
     }
   ];
 
-  const categories = ['all', 'Enterprise Chatbots', 'Document AI & RAG', 'LLM Integrations', 'AI Process Automation', 'Custom AI Solutions'];
+  const categories = ['all', 'AI Education Platform', 'Chatbot Automation'];
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -312,12 +97,11 @@ const ProjectCases = () => {
           viewport={{ once: true }}
           className={styles.header}
         >
-          <h2 className={styles.title}>Corporate LLM Solutions</h2>
+          <h2 className={styles.title}>What We've Built</h2>
           <div className={styles.disclaimer}>
             <p className={styles.disclaimerText}>
-              <strong>These are example projects</strong> showcasing our expertise in LLM applications and AI integrations.
-              From intelligent chatbots to document processing systems, we build custom AI solutions
-              that transform how enterprises operate.
+              <strong>We're business makers.</strong> We walk with our clients to build not just scalable software,
+              but scalable business solutions. Here are some of the AI-powered products we've developed and launched.
             </p>
             <button 
               onClick={() => openWhatsApp()}
@@ -338,7 +122,7 @@ const ProjectCases = () => {
               onClick={() => setFilter(cat)}
               className={`${styles.filterTab} ${filter === cat ? styles.activeTab : ''}`}
             >
-              {cat === 'all' ? 'All Examples' : cat}
+              {cat === 'all' ? 'All Projects' : cat}
             </button>
           ))}
         </div>
@@ -398,7 +182,7 @@ const ProjectCard = ({
       onClick={onClick}
       className={styles.projectCard}
     >
-      <div className={styles.exampleTag}>Example</div>
+      <div className={styles.exampleTag}>Live Project</div>
       
       <div className={styles.cardHeader}>
         <span className={styles.category}>
@@ -528,7 +312,7 @@ const ProjectModal = ({
           {/* CTA */}
           <div className={styles.ctaSection}>
             <p className={styles.ctaPrompt}>
-              Ready to transform your business with AI?
+              Ready to build something together?
             </p>
             <button 
               className={styles.modalWhatsappButton}
