@@ -148,18 +148,17 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.exampleTag {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #fef3c7;
-  color: #92400e;
-  font-size: 0.65rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.projectLink {
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projectLink:hover {
+  color: #3b82f6;
 }
 
 .cardHeader {
@@ -182,13 +181,6 @@
   line-height: 1.3;
 }
 
-.client {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  margin-bottom: 1rem;
-  font-weight: 300;
-  font-style: italic;
-}
 
 .projectDescription {
   font-size: 0.875rem;
@@ -216,6 +208,32 @@
   font-weight: 400;
 }
 
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.visitButton {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.visitButton:hover {
+  background: #374151;
+  transform: translateY(-1px);
+}
+
 .viewCase {
   display: flex;
   align-items: center;
@@ -223,9 +241,6 @@
   color: #9ca3af;
   font-size: 0.875rem;
   transition: color 0.3s ease;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid #f3f4f6;
 }
 
 .projectCard:hover .viewCase {
@@ -334,32 +349,24 @@
   margin-bottom: 2rem;
 }
 
-.modalBadge {
-  display: inline-block;
-  background: #fef3c7;
-  color: #92400e;
-  font-size: 0.7rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-}
-
 .modalTitle {
   font-size: 2rem;
   font-weight: 300;
   color: #1a1a1a;
   line-height: 1.2;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.5rem;
 }
 
-.modalClient {
-  font-size: 0.95rem;
-  color: #6b7280;
-  font-weight: 300;
-  font-style: italic;
+.modalLink {
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.modalLink:hover {
+  color: #3b82f6;
 }
 
 .closeButton {

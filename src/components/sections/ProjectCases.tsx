@@ -6,7 +6,7 @@ import styles from './ProjectCases.module.css';
 interface Project {
   id: string;
   title: string;
-  client: string;
+  url: string;
   category: string;
   description: string;
   challenge: string;
@@ -41,7 +41,7 @@ const ProjectCases = () => {
     {
       id: 'nio-learning',
       title: 'NIO Learning',
-      client: 'niolearning.com',
+      url: 'https://niolearning.com',
       category: 'AI Education Platform',
       description: 'One of the first AI-powered education platforms in Latin America',
       challenge: 'Traditional education platforms lacked personalization and couldn\'t adapt to individual learning styles, leaving students struggling to keep pace or feeling unchallenged.',
@@ -58,7 +58,7 @@ const ProjectCases = () => {
     {
       id: 'crickett',
       title: 'Crickett',
-      client: 'crickett.com.mx',
+      url: 'https://crickett.com.mx',
       category: 'Chatbot Automation',
       description: 'AI automation tool for lead capture — plug and use, no flow design needed',
       challenge: 'Entrepreneurs and small businesses needed chatbot automation but were overwhelmed by complex flow builders, technical setup, and expensive solutions that required constant maintenance.',
@@ -163,15 +163,20 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const ProjectCard = ({ 
-  project, 
-  index, 
-  onClick 
-}: { 
-  project: Project; 
-  index: number; 
+const ProjectCard = ({
+  project,
+  index,
+  onClick
+}: {
+  project: Project;
+  index: number;
   onClick: () => void;
 }) => {
+  const handleVisitSite = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open(project.url, '_blank');
+  };
+
   return (
     <motion.div
       layout
@@ -182,8 +187,6 @@ const ProjectCard = ({
       onClick={onClick}
       className={styles.projectCard}
     >
-      <div className={styles.exampleTag}>Live Project</div>
-      
       <div className={styles.cardHeader}>
         <span className={styles.category}>
           {project.category}
@@ -193,11 +196,17 @@ const ProjectCard = ({
       <h3 className={styles.projectTitle}>
         {project.title}
       </h3>
-      
-      <p className={styles.client}>
-        {project.client}
-      </p>
-      
+
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className={styles.projectLink}
+      >
+        {project.url.replace('https://', '')} ↗
+      </a>
+
       <p className={styles.projectDescription}>
         {project.description}
       </p>
@@ -212,9 +221,14 @@ const ProjectCard = ({
         </div>
       )}
 
-      <div className={styles.viewCase}>
-        <span>View Details</span>
-        <span className={styles.arrow}>→</span>
+      <div className={styles.cardActions}>
+        <button onClick={handleVisitSite} className={styles.visitButton}>
+          Visit Site ↗
+        </button>
+        <div className={styles.viewCase}>
+          <span>View Details</span>
+          <span className={styles.arrow}>→</span>
+        </div>
       </div>
     </motion.div>
   );
@@ -249,15 +263,17 @@ const ProjectModal = ({
           {/* Header */}
           <div className={styles.modalHeader}>
             <div>
-              <div className={styles.modalBadge}>
-                Example Project
-              </div>
               <h2 className={styles.modalTitle}>
                 {project.title}
               </h2>
-              <p className={styles.modalClient}>
-                {project.client}
-              </p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.modalLink}
+              >
+                {project.url.replace('https://', '')} ↗
+              </a>
             </div>
             <button
               onClick={onClose}
