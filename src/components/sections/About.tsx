@@ -1,11 +1,13 @@
 // src/components/sections/About.tsx
 import { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLanguage } from '../../context/LanguageContext';
 import styles from './About.module.css';
 
 const About = () => {
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -23,7 +25,7 @@ const About = () => {
           viewport={{ once: true }}
           className={styles.header}
         >
-          <h2 className={styles.title}>About Karuna</h2>
+          <h2 className={styles.title}>{t('about.title')}</h2>
           
           <motion.div
             className={styles.divider}
@@ -44,9 +46,7 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Karuna is a technology consultancy firm with an extreme focus on finding 
-            the best business solutions for systems administration. We believe that 
-            technology should serve humanity, not the other way around.
+            {t('about.lead')}
           </motion.p>
 
           <motion.p
@@ -56,10 +56,7 @@ const About = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Our philosophy is simple yet profound: we exist to serve others by 
-            implementing top-tier technology solutions that improve well-being and 
-            operational efficiency. Every line of code, every system design, and 
-            every consultation is guided by this principle.
+            {t('about.philosophy')}
           </motion.p>
         </motion.div>
 
@@ -70,10 +67,10 @@ const About = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className={styles.offerTitle}>What We Offer</h3>
-          
+          <h3 className={styles.offerTitle}>{t('about.whatWeOffer')}</h3>
+
           <div className={styles.offerGrid}>
-            <motion.div 
+            <motion.div
               className={styles.offerItem}
               whileHover={{ x: 10 }}
               onHoverStart={() => setIsHovered(true)}
@@ -81,41 +78,37 @@ const About = () => {
             >
               <span className={styles.offerNumber}>01</span>
               <p className={styles.offerText}>
-                End-to-end automation solutions that transform manual processes into 
-                efficient, scalable systems across any architecture.
+                {t('about.offer1')}
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.offerItem}
               whileHover={{ x: 10 }}
             >
               <span className={styles.offerNumber}>02</span>
               <p className={styles.offerText}>
-                Data optimization and business intelligence solutions that turn raw 
-                information into actionable insights and strategic advantages.
+                {t('about.offer2')}
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.offerItem}
               whileHover={{ x: 10 }}
             >
               <span className={styles.offerNumber}>03</span>
               <p className={styles.offerText}>
-                Custom software development from web applications to enterprise SAAS 
-                solutions, built with precision and user-centric design.
+                {t('about.offer3')}
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.offerItem}
               whileHover={{ x: 10 }}
             >
               <span className={styles.offerNumber}>04</span>
               <p className={styles.offerText}>
-                Hardware and IoT integration for modern infrastructure, bringing 
-                physical and digital systems into perfect harmony.
+                {t('about.offer4')}
               </p>
             </motion.div>
           </div>
@@ -129,8 +122,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p className={styles.closingText}>
-            We don't just implement solutions; we become partners in your journey 
-            toward operational excellence and technological advancement.
+            {t('about.closing')}
           </p>
         </motion.div>
 

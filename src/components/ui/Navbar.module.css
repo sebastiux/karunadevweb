@@ -185,6 +185,13 @@
   height: 70%;
 }
 
+/* Right Actions Container */
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Language Switcher */
 .langSwitch {
   background: transparent;
@@ -424,7 +431,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .navLinks,
-  .ctaButton {
+  .rightActions {
     display: none;
   }
   

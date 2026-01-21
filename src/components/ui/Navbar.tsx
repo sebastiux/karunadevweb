@@ -110,22 +110,25 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Language Switcher */}
-          <button
-            className={styles.langSwitch}
-            onClick={toggleLanguage}
-            aria-label="Switch language"
-          >
-            {language === 'en' ? 'ES' : 'EN'}
-          </button>
+          {/* Right side actions */}
+          <div className={styles.rightActions}>
+            {/* Language Switcher */}
+            <button
+              className={styles.langSwitch}
+              onClick={toggleLanguage}
+              aria-label="Switch language"
+            >
+              {language === 'en' ? 'ES' : 'EN'}
+            </button>
 
-          {/* CTA Button */}
-          <button
-            className={styles.ctaButton}
-            onClick={openWhatsApp}
-          >
-            {t('nav.whatsapp')}
-          </button>
+            {/* CTA Button */}
+            <button
+              className={styles.ctaButton}
+              onClick={openWhatsApp}
+            >
+              {t('nav.whatsapp')}
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button 

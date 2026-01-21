@@ -22,8 +22,16 @@ const translations = {
     'nav.chatbotAutomation': 'Chatbot Automation',
 
     // About section
-    'about.title': 'We Build AI Solutions',
+    'about.title': 'About Karuna',
     'about.subtitle': 'Transforming businesses with intelligent automation',
+    'about.lead': 'Karuna is a technology consultancy firm with an extreme focus on finding the best business solutions for systems administration. We believe that technology should serve humanity, not the other way around.',
+    'about.philosophy': 'Our philosophy is simple yet profound: we exist to serve others by implementing top-tier technology solutions that improve well-being and operational efficiency. Every line of code, every system design, and every consultation is guided by this principle.',
+    'about.whatWeOffer': 'What We Offer',
+    'about.offer1': 'End-to-end automation solutions that transform manual processes into efficient, scalable systems across any architecture.',
+    'about.offer2': 'Data optimization and business intelligence solutions that turn raw information into actionable insights and strategic advantages.',
+    'about.offer3': 'Custom software development from web applications to enterprise SAAS solutions, built with precision and user-centric design.',
+    'about.offer4': 'Hardware and IoT integration for modern infrastructure, bringing physical and digital systems into perfect harmony.',
+    'about.closing': "We don't just implement solutions; we become partners in your journey toward operational excellence and technological advancement.",
 
     // Projects section
     'projects.title': "What We've Built",
@@ -85,8 +93,16 @@ const translations = {
     'nav.chatbotAutomation': 'Automatización Chatbot',
 
     // About section
-    'about.title': 'Construimos Soluciones de IA',
+    'about.title': 'Acerca de Karuna',
     'about.subtitle': 'Transformando negocios con automatización inteligente',
+    'about.lead': 'Karuna es una firma de consultoría tecnológica con un enfoque extremo en encontrar las mejores soluciones de negocio para administración de sistemas. Creemos que la tecnología debe servir a la humanidad, no al revés.',
+    'about.philosophy': 'Nuestra filosofía es simple pero profunda: existimos para servir a otros implementando soluciones tecnológicas de primer nivel que mejoran el bienestar y la eficiencia operacional. Cada línea de código, cada diseño de sistema y cada consultoría está guiada por este principio.',
+    'about.whatWeOffer': 'Lo Que Ofrecemos',
+    'about.offer1': 'Soluciones de automatización de extremo a extremo que transforman procesos manuales en sistemas eficientes y escalables en cualquier arquitectura.',
+    'about.offer2': 'Optimización de datos y soluciones de inteligencia de negocios que convierten información cruda en insights accionables y ventajas estratégicas.',
+    'about.offer3': 'Desarrollo de software personalizado desde aplicaciones web hasta soluciones SAAS empresariales, construidas con precisión y diseño centrado en el usuario.',
+    'about.offer4': 'Integración de hardware e IoT para infraestructura moderna, llevando sistemas físicos y digitales a una armonía perfecta.',
+    'about.closing': 'No solo implementamos soluciones; nos convertimos en socios en tu viaje hacia la excelencia operacional y el avance tecnológico.',
 
     // Projects section
     'projects.title': 'Lo Que Hemos Construido',
