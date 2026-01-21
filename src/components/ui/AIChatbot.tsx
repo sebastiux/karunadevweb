@@ -66,16 +66,59 @@ const AIChatbot = () => {
   }, [isOpen]);
 
   const generateRequirementsSummary = () => {
+    // Extract key information from the conversation
     const userMessages = messages
       .filter(m => m.role === 'user')
-      .map(m => m.content)
-      .join(' | ');
+      .map(m => m.content);
 
-    const lastAssistantMessage = messages
-      .filter(m => m.role === 'assistant')
-      .slice(-1)[0]?.content || '';
+    // Build a structured summary for the WhatsApp agent
+    const conversationContext = userMessages.join(' ').toLowerCase();
 
-    return `Hi Karuna! I chatted with Karu (AI consultant) and here's what we discussed:\n\n${userMessages}\n\nKaru's summary: ${lastAssistantMessage}`;
+    // Detect industry/business type
+    let industry = 'Not specified';
+    if (conversationContext.includes('restaurant') || conversationContext.includes('food')) industry = 'Food & Restaurant';
+    else if (conversationContext.includes('legal') || conversationContext.includes('law')) industry = 'Legal Services';
+    else if (conversationContext.includes('health') || conversationContext.includes('medical') || conversationContext.includes('clinic')) industry = 'Healthcare';
+    else if (conversationContext.includes('retail') || conversationContext.includes('store') || conversationContext.includes('ecommerce') || conversationContext.includes('shop')) industry = 'Retail/E-commerce';
+    else if (conversationContext.includes('real estate') || conversationContext.includes('property')) industry = 'Real Estate';
+    else if (conversationContext.includes('finance') || conversationContext.includes('bank') || conversationContext.includes('insurance')) industry = 'Financial Services';
+    else if (conversationContext.includes('tech') || conversationContext.includes('software') || conversationContext.includes('saas')) industry = 'Technology/SaaS';
+    else if (conversationContext.includes('junk') || conversationContext.includes('removal') || conversationContext.includes('cleaning') || conversationContext.includes('service')) industry = 'Service Business';
+    else if (conversationContext.includes('manufactur') || conversationContext.includes('factory')) industry = 'Manufacturing';
+    else if (conversationContext.includes('logistic') || conversationContext.includes('transport') || conversationContext.includes('delivery')) industry = 'Logistics/Transport';
+
+    // Detect service interests
+    const interests: string[] = [];
+    if (conversationContext.includes('chatbot') || conversationContext.includes('customer service') || conversationContext.includes('support')) interests.push('Enterprise Chatbot');
+    if (conversationContext.includes('document') || conversationContext.includes('pdf') || conversationContext.includes('contract') || conversationContext.includes('rag')) interests.push('Document AI & RAG');
+    if (conversationContext.includes('crm') || conversationContext.includes('salesforce') || conversationContext.includes('email') || conversationContext.includes('slack') || conversationContext.includes('integration')) interests.push('LLM Integration');
+    if (conversationContext.includes('automat') || conversationContext.includes('process') || conversationContext.includes('invoice') || conversationContext.includes('workflow')) interests.push('AI Process Automation');
+    if (interests.length === 0) interests.push('Custom AI Solution');
+
+    // Get the full conversation for context
+    const fullConversation = messages
+      .map(m => `${m.role === 'user' ? 'Client' : 'Karu'}: ${m.content}`)
+      .join('\n');
+
+    // Create actionable summary
+    return `🤖 *NEW LEAD FROM KARU AI*
+
+📋 *CLIENT SUMMARY*
+• Industry: ${industry}
+• Interested in: ${interests.join(', ')}
+• Messages exchanged: ${userMessages.length}
+
+💬 *WHAT THEY NEED*
+${userMessages.slice(0, 3).map(msg => `• ${msg}`).join('\n')}
+
+🎯 *RECOMMENDED ACTION*
+Schedule a discovery call to discuss their ${interests[0]} needs and provide a tailored proposal.
+
+📝 *FULL CONVERSATION*
+${fullConversation}
+
+---
+Lead captured via karunadev.com AI consultant`;
   };
 
   const openWhatsApp = () => {
