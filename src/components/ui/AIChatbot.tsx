@@ -9,29 +9,20 @@ interface Message {
   content: string;
 }
 
-const SYSTEM_PROMPT = `You are Karu, a friendly and professional AI IT consultant for Karuna Dev, a company specializing in corporate LLM solutions and AI integrations. Your role is to:
+const SYSTEM_PROMPT = `You are Karu, a friendly AI assistant for Karuna Dev, a company that builds AI solutions for businesses.
 
-1. Greet the user warmly and ask about their business challenges
-2. Understand their needs through natural conversation (ask about their industry, team size, current pain points)
-3. Identify which of our services could help them:
-   - Enterprise Chatbots (customer service, HR, sales)
-   - Document AI & RAG (legal docs, technical docs, compliance)
-   - LLM Integrations (CRM, email, Slack)
-   - AI Process Automation (invoices, resumes, reports)
-   - Custom AI Solutions
+Your job is simple:
+1. Greet the user warmly
+2. Ask what they need help with
+3. Once they explain their problem or need, briefly acknowledge it and encourage them to book a call via WhatsApp
 
-Keep responses concise (2-3 sentences max). Be helpful but don't oversell.
+Keep responses SHORT (1-2 sentences). Don't ask too many follow-up questions. Once you understand their basic need, suggest booking a call.
 
-After understanding their initial needs (usually 3-4 exchanges), mention they can book a call via WhatsApp, BUT CONTINUE asking follow-up questions to gather more details like:
-- Budget range or timeline expectations
-- Current tools/systems they use
-- Team size and technical capacity
-- Specific pain points or metrics they want to improve
-- Any previous experience with AI solutions
+Example flow:
+- User: "I want to automate my business"
+- You: "Great! Automation can really help streamline your operations. Click below to book a call and we'll discuss the best solution for you."
 
-Always keep the conversation going to learn more. Even after suggesting WhatsApp, ask another relevant question. Never end the conversation abruptly.
-
-Always be professional, warm, and solution-oriented. Speak in English or Spanish based on user's language.`;
+Be friendly and conversational, not salesy. Speak in English or Spanish based on user's language.`;
 
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,59 +57,19 @@ const AIChatbot = () => {
   }, [isOpen]);
 
   const generateRequirementsSummary = () => {
-    // Extract key information from the conversation
+    // Get what the user said they need
     const userMessages = messages
       .filter(m => m.role === 'user')
-      .map(m => m.content);
+      .map(m => m.content)
+      .filter(msg => msg.toLowerCase() !== 'hello' && msg.toLowerCase() !== 'hi' && msg.length > 3);
 
-    // Build a structured summary for the WhatsApp agent
-    const conversationContext = userMessages.join(' ').toLowerCase();
+    const needs = userMessages.join('. ');
 
-    // Detect industry/business type
-    let industry = 'Not specified';
-    if (conversationContext.includes('restaurant') || conversationContext.includes('food')) industry = 'Food & Restaurant';
-    else if (conversationContext.includes('legal') || conversationContext.includes('law')) industry = 'Legal Services';
-    else if (conversationContext.includes('health') || conversationContext.includes('medical') || conversationContext.includes('clinic')) industry = 'Healthcare';
-    else if (conversationContext.includes('retail') || conversationContext.includes('store') || conversationContext.includes('ecommerce') || conversationContext.includes('shop')) industry = 'Retail/E-commerce';
-    else if (conversationContext.includes('real estate') || conversationContext.includes('property')) industry = 'Real Estate';
-    else if (conversationContext.includes('finance') || conversationContext.includes('bank') || conversationContext.includes('insurance')) industry = 'Financial Services';
-    else if (conversationContext.includes('tech') || conversationContext.includes('software') || conversationContext.includes('saas')) industry = 'Technology/SaaS';
-    else if (conversationContext.includes('junk') || conversationContext.includes('removal') || conversationContext.includes('cleaning') || conversationContext.includes('service')) industry = 'Service Business';
-    else if (conversationContext.includes('manufactur') || conversationContext.includes('factory')) industry = 'Manufacturing';
-    else if (conversationContext.includes('logistic') || conversationContext.includes('transport') || conversationContext.includes('delivery')) industry = 'Logistics/Transport';
+    return `Hi! I chatted with Karu on your website.
 
-    // Detect service interests
-    const interests: string[] = [];
-    if (conversationContext.includes('chatbot') || conversationContext.includes('customer service') || conversationContext.includes('support')) interests.push('Enterprise Chatbot');
-    if (conversationContext.includes('document') || conversationContext.includes('pdf') || conversationContext.includes('contract') || conversationContext.includes('rag')) interests.push('Document AI & RAG');
-    if (conversationContext.includes('crm') || conversationContext.includes('salesforce') || conversationContext.includes('email') || conversationContext.includes('slack') || conversationContext.includes('integration')) interests.push('LLM Integration');
-    if (conversationContext.includes('automat') || conversationContext.includes('process') || conversationContext.includes('invoice') || conversationContext.includes('workflow')) interests.push('AI Process Automation');
-    if (interests.length === 0) interests.push('Custom AI Solution');
+I'm looking for help with: ${needs || 'AI solutions for my business'}
 
-    // Get the full conversation for context
-    const fullConversation = messages
-      .map(m => `${m.role === 'user' ? 'Client' : 'Karu'}: ${m.content}`)
-      .join('\n');
-
-    // Create actionable summary
-    return `🤖 *NEW LEAD FROM KARU AI*
-
-📋 *CLIENT SUMMARY*
-• Industry: ${industry}
-• Interested in: ${interests.join(', ')}
-• Messages exchanged: ${userMessages.length}
-
-💬 *WHAT THEY NEED*
-${userMessages.slice(0, 3).map(msg => `• ${msg}`).join('\n')}
-
-🎯 *RECOMMENDED ACTION*
-Schedule a discovery call to discuss their ${interests[0]} needs and provide a tailored proposal.
-
-📝 *FULL CONVERSATION*
-${fullConversation}
-
----
-Lead captured via karunadev.com AI consultant`;
+Can we schedule a call to discuss?`;
   };
 
   const openWhatsApp = () => {
@@ -174,13 +125,8 @@ Lead captured via karunadev.com AI consultant`;
 
       setMessages(prev => [...prev, assistantMessage]);
 
-      // Check if we should show WhatsApp CTA
-      if (
-        assistantContent.toLowerCase().includes('whatsapp') ||
-        assistantContent.toLowerCase().includes('connect you') ||
-        assistantContent.toLowerCase().includes('our team') ||
-        messages.length >= 6
-      ) {
+      // Show WhatsApp CTA after user explains their need (2+ messages means they've said something beyond hello)
+      if (messages.length >= 2) {
         setShowWhatsAppCTA(true);
       }
     } catch (error) {
