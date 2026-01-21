@@ -1,27 +1,29 @@
 // src/components/sections/ProjectCases.tsx
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import styles from './ProjectCases.module.css';
 
 interface Project {
   id: string;
-  title: string;
+  titleKey: string;
   url: string;
-  category: string;
-  description: string;
-  challenge: string;
-  solution: string;
-  results: string[];
+  categoryKey: string;
+  descriptionKey: string;
+  challengeKey: string;
+  solutionKey: string;
+  resultKeys: string[];
   technologies?: string[];
 }
 
 const ProjectCases = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState<string>('all');
-  
+  const { t, language } = useLanguage();
+
   const whatsappNumber = '527202533388';
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  
+
   // Listen for filter events from navbar
   useEffect(() => {
     const handleFilterEvent = (event: Event) => {
@@ -35,54 +37,48 @@ const ProjectCases = () => {
       window.removeEventListener('filterProjects', handleFilterEvent);
     };
   }, []);
-  
+
   const projects: Project[] = [
     // NIO Learning
     {
       id: 'nio-learning',
-      title: 'NIO Learning',
+      titleKey: 'nio.title',
       url: 'https://niolearning.com',
-      category: 'AI Education Platform',
-      description: 'One of the first AI-powered education platforms in Latin America',
-      challenge: 'Traditional education platforms lacked personalization and couldn\'t adapt to individual learning styles, leaving students struggling to keep pace or feeling unchallenged.',
-      solution: 'We developed and scaled NIO Learning from the ground up — an AI-powered education platform that personalizes learning paths, adapts content difficulty in real-time, and provides intelligent tutoring assistance to students across Latin America.',
-      results: [
-        'Pioneer AI education platform in LATAM',
-        'Personalized learning paths for each student',
-        'Real-time content adaptation',
-        'Scalable architecture serving thousands of users'
-      ],
+      categoryKey: 'nio.category',
+      descriptionKey: 'nio.description',
+      challengeKey: 'nio.challenge',
+      solutionKey: 'nio.solution',
+      resultKeys: ['nio.result1', 'nio.result2', 'nio.result3', 'nio.result4'],
       technologies: ['AI/ML', 'LLM Integration', 'React', 'Node.js', 'Cloud Infrastructure']
     },
     // Crickett
     {
       id: 'crickett',
-      title: 'Crickett',
+      titleKey: 'crickett.title',
       url: 'https://crickett.com.mx',
-      category: 'Chatbot Automation',
-      description: 'AI automation tool for lead capture — plug and use, no flow design needed',
-      challenge: 'Entrepreneurs and small businesses needed chatbot automation but were overwhelmed by complex flow builders, technical setup, and expensive solutions that required constant maintenance.',
-      solution: 'We built Crickett — an AI chatbot automation tool that\'s ready to use out of the box. Just connect it to your website and WhatsApp, and start capturing leads instantly. No flow design, no technical knowledge required. Pure plug-and-play automation.',
-      results: [
-        'Zero-configuration chatbot deployment',
-        'Website + WhatsApp integration',
-        'Instant lead capture automation',
-        'Built for entrepreneurs and SMBs'
-      ],
+      categoryKey: 'crickett.category',
+      descriptionKey: 'crickett.description',
+      challengeKey: 'crickett.challenge',
+      solutionKey: 'crickett.solution',
+      resultKeys: ['crickett.result1', 'crickett.result2', 'crickett.result3', 'crickett.result4'],
       technologies: ['AI Chatbots', 'WhatsApp API', 'Web Embedding', 'Lead Automation']
     }
   ];
 
   const categories = ['all', 'AI Education Platform', 'Chatbot Automation'];
-  
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(p => p.category === filter);
+
+  const filteredProjects = filter === 'all'
+    ? projects
+    : projects.filter(p => t(p.categoryKey) === filter || p.categoryKey.includes(filter.toLowerCase().replace(' ', '')));
 
   const openWhatsApp = (projectTitle?: string) => {
-    const baseMessage = projectTitle
-      ? `Hi Karuna! I'm interested in discussing an AI solution similar to "${projectTitle}"`
-      : `Hi Karuna! I'd like to discuss AI/LLM solutions for my business`;
+    const baseMessage = language === 'en'
+      ? (projectTitle
+        ? `Hi Karuna! I'm interested in discussing an AI solution similar to "${projectTitle}"`
+        : `Hi Karuna! I'd like to discuss AI/LLM solutions for my business`)
+      : (projectTitle
+        ? `¡Hola Karuna! Me interesa hablar sobre una solución de IA similar a "${projectTitle}"`
+        : `¡Hola Karuna! Me gustaría hablar sobre soluciones de IA/LLM para mi negocio`);
     const encodedMessage = encodeURIComponent(baseMessage);
     window.open(`${whatsappLink}?text=${encodedMessage}`, '_blank');
   };
@@ -97,20 +93,19 @@ const ProjectCases = () => {
           viewport={{ once: true }}
           className={styles.header}
         >
-          <h2 className={styles.title}>What We've Built</h2>
+          <h2 className={styles.title}>{t('projects.title')}</h2>
           <div className={styles.disclaimer}>
             <p className={styles.disclaimerText}>
-              <strong>We're business makers.</strong> We walk with our clients to build not just scalable software,
-              but scalable business solutions. Here are some of the AI-powered products we've developed and launched.
+              <strong>{t('projects.intro')}</strong> {t('projects.introText')}
             </p>
-            <button 
+            <button
               onClick={() => openWhatsApp()}
               className={styles.whatsappButton}
             >
               <WhatsAppIcon />
-              <span>Let's Discuss Your Project</span>
+              <span>{t('projects.discuss')}</span>
             </button>
-            <p className={styles.phoneNumber}>WhatsApp: +52 720 253 3388</p>
+            <p className={styles.phoneNumber}>{t('projects.whatsapp')} +52 720 253 3388</p>
           </div>
         </motion.div>
 
@@ -122,7 +117,7 @@ const ProjectCases = () => {
               onClick={() => setFilter(cat)}
               className={`${styles.filterTab} ${filter === cat ? styles.activeTab : ''}`}
             >
-              {cat === 'all' ? 'All Projects' : cat}
+              {cat === 'all' ? t('projects.allProjects') : cat}
             </button>
           ))}
         </div>
@@ -136,6 +131,7 @@ const ProjectCases = () => {
                 project={project}
                 index={index}
                 onClick={() => setSelectedProject(project)}
+                t={t}
               />
             ))}
           </AnimatePresence>
@@ -148,7 +144,8 @@ const ProjectCases = () => {
           <ProjectModal
             project={selectedProject}
             onClose={() => setSelectedProject(null)}
-            onWhatsApp={() => openWhatsApp(selectedProject.title)}
+            onWhatsApp={() => openWhatsApp(t(selectedProject.titleKey))}
+            t={t}
           />
         )}
       </AnimatePresence>
@@ -166,11 +163,13 @@ const WhatsAppIcon = () => (
 const ProjectCard = ({
   project,
   index,
-  onClick
+  onClick,
+  t
 }: {
   project: Project;
   index: number;
   onClick: () => void;
+  t: (key: string) => string;
 }) => {
   const handleVisitSite = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -189,12 +188,12 @@ const ProjectCard = ({
     >
       <div className={styles.cardHeader}>
         <span className={styles.category}>
-          {project.category}
+          {t(project.categoryKey)}
         </span>
       </div>
 
       <h3 className={styles.projectTitle}>
-        {project.title}
+        {t(project.titleKey)}
       </h3>
 
       <a
@@ -208,7 +207,7 @@ const ProjectCard = ({
       </a>
 
       <p className={styles.projectDescription}>
-        {project.description}
+        {t(project.descriptionKey)}
       </p>
 
       {project.technologies && (
@@ -223,10 +222,10 @@ const ProjectCard = ({
 
       <div className={styles.cardActions}>
         <button onClick={handleVisitSite} className={styles.visitButton}>
-          Visit Site ↗
+          {t('projects.visitSite')} ↗
         </button>
         <div className={styles.viewCase}>
-          <span>View Details</span>
+          <span>{t('projects.viewDetails')}</span>
           <span className={styles.arrow}>→</span>
         </div>
       </div>
@@ -234,14 +233,16 @@ const ProjectCard = ({
   );
 };
 
-const ProjectModal = ({ 
-  project, 
+const ProjectModal = ({
+  project,
   onClose,
-  onWhatsApp
-}: { 
-  project: Project; 
+  onWhatsApp,
+  t
+}: {
+  project: Project;
   onClose: () => void;
   onWhatsApp: () => void;
+  t: (key: string) => string;
 }) => {
   return (
     <motion.div
@@ -264,7 +265,7 @@ const ProjectModal = ({
           <div className={styles.modalHeader}>
             <div>
               <h2 className={styles.modalTitle}>
-                {project.title}
+                {t(project.titleKey)}
               </h2>
               <a
                 href={project.url}
@@ -287,26 +288,26 @@ const ProjectModal = ({
 
           {/* Content */}
           <div className={styles.contentSection}>
-            <h3 className={styles.sectionTitle}>The Challenge</h3>
+            <h3 className={styles.sectionTitle}>{t('projects.challenge')}</h3>
             <p className={styles.sectionText}>
-              {project.challenge}
+              {t(project.challengeKey)}
             </p>
           </div>
 
           <div className={styles.contentSection}>
-            <h3 className={styles.sectionTitle}>Our Solution</h3>
+            <h3 className={styles.sectionTitle}>{t('projects.solution')}</h3>
             <p className={styles.sectionText}>
-              {project.solution}
+              {t(project.solutionKey)}
             </p>
           </div>
 
           <div className={styles.contentSection}>
-            <h3 className={styles.sectionTitle}>Results</h3>
+            <h3 className={styles.sectionTitle}>{t('projects.results')}</h3>
             <ul className={styles.resultsList}>
-              {project.results.map((result, i) => (
+              {project.resultKeys.map((resultKey, i) => (
                 <li key={i} className={styles.resultItem}>
                   <span className={styles.resultBullet}>•</span>
-                  <span className={styles.resultText}>{result}</span>
+                  <span className={styles.resultText}>{t(resultKey)}</span>
                 </li>
               ))}
             </ul>
@@ -328,14 +329,14 @@ const ProjectModal = ({
           {/* CTA */}
           <div className={styles.ctaSection}>
             <p className={styles.ctaPrompt}>
-              Ready to build something together?
+              {t('projects.cta')}
             </p>
-            <button 
+            <button
               className={styles.modalWhatsappButton}
               onClick={onWhatsApp}
             >
               <WhatsAppIcon />
-              <span>WhatsApp: +52 720 253 3388</span>
+              <span>{t('projects.ctaButton')}</span>
             </button>
           </div>
         </div>

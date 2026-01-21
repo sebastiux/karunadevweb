@@ -1,3 +1,4 @@
+import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/ui/Navbar'
 import About from './components/sections/About'
 import InkDivider from './components/ui/EnsoPhilosophy'
@@ -7,14 +8,16 @@ import AIChatbot from './components/ui/AIChatbot'
 
 function App() {
   return (
-    <div className="min-h-screen bg-paper">
-      <Navbar />
-      <InkDivider />
-      <About />
-      <ProjectCases />
-      <Contact />
-      <AIChatbot />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-paper">
+        <Navbar />
+        <InkDivider />
+        <About />
+        <ProjectCases />
+        <Contact />
+        <AIChatbot />
+      </div>
+    </LanguageProvider>
   )
 }
 

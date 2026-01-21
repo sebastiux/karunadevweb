@@ -185,6 +185,26 @@
   height: 70%;
 }
 
+/* Language Switcher */
+.langSwitch {
+  background: transparent;
+  color: #1a1a1a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.langSwitch:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
 /* CTA Button */
 .ctaButton {
   background: #000;
@@ -361,8 +381,28 @@
   background: rgba(0, 0, 0, 0.02);
 }
 
+.mobileLangSwitch {
+  margin-top: 20px;
+  width: 100%;
+  background: transparent;
+  color: #1a1a1a;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mobileLangSwitch:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
 .mobileCTA {
-  margin-top: 40px;
+  margin-top: 16px;
   width: 100%;
   background: #000;
   color: #fff;

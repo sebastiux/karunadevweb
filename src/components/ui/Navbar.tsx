@@ -1,17 +1,19 @@
 // src/components/ui/Navbar.tsx
 import { useState, useEffect } from 'react';
 import { KarunaLogo } from '../../assets';
+import { useLanguage } from '../../context/LanguageContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -20,7 +22,7 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      
+
       // If there's a filter, dispatch a custom event after scrolling
       if (filter) {
         setTimeout(() => {
@@ -32,15 +34,19 @@ const Navbar = () => {
   };
 
   const serviceFilters = [
-    { name: 'All Projects', id: 'work', filter: 'all' },
-    { name: 'AI Education', id: 'work', filter: 'AI Education Platform' },
-    { name: 'Chatbot Automation', id: 'work', filter: 'Chatbot Automation' },
+    { name: t('nav.allProjects'), id: 'work', filter: 'all' },
+    { name: t('nav.aiEducation'), id: 'work', filter: 'AI Education Platform' },
+    { name: t('nav.chatbotAutomation'), id: 'work', filter: 'Chatbot Automation' },
   ];
 
   const openWhatsApp = () => {
     const whatsappNumber = '527202533388';
-    const message = encodeURIComponent('Hi Karuna! I would like to discuss a project');
+    const message = encodeURIComponent(language === 'en' ? 'Hi Karuna! I would like to discuss a project' : '¡Hola Karuna! Me gustaría hablar sobre un proyecto');
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
   };
 
   return (
@@ -59,19 +65,19 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className={styles.navLinks}>
-            <button 
+            <button
               className={styles.navLink}
               onClick={() => scrollToSection('about')}
             >
-              About
+              {t('nav.about')}
             </button>
 
             <div className={styles.servicesDropdown}>
-              <button 
+              <button
                 className={`${styles.navLink} ${styles.servicesButton}`}
                 onClick={() => scrollToSection('services')}
               >
-                Services
+                {t('nav.services')}
               </button>
               <div className={styles.dropdownMenu}>
                 {serviceFilters.map((service) => (
@@ -89,27 +95,36 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button 
+            <button
               className={styles.navLink}
               onClick={() => scrollToSection('work')}
             >
-              Projects
+              {t('nav.projects')}
             </button>
 
-            <button 
+            <button
               className={styles.navLink}
               onClick={() => scrollToSection('contact')}
             >
-              Contact
+              {t('nav.contact')}
             </button>
           </div>
 
+          {/* Language Switcher */}
+          <button
+            className={styles.langSwitch}
+            onClick={toggleLanguage}
+            aria-label="Switch language"
+          >
+            {language === 'en' ? 'ES' : 'EN'}
+          </button>
+
           {/* CTA Button */}
-          <button 
+          <button
             className={styles.ctaButton}
             onClick={openWhatsApp}
           >
-            WhatsApp Us
+            {t('nav.whatsapp')}
           </button>
 
           {/* Mobile Menu Button */}
@@ -135,19 +150,19 @@ const Navbar = () => {
       {/* Mobile Menu Panel */}
       <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.active : ''}`}>
         <div className={styles.mobileMenuContent}>
-          <button 
+          <button
             className={styles.mobileNavLink}
             onClick={() => scrollToSection('about')}
           >
-            About
+            {t('nav.about')}
           </button>
 
           <div>
-            <button 
+            <button
               className={styles.mobileNavLink}
               onClick={() => scrollToSection('services')}
             >
-              Services
+              {t('nav.services')}
             </button>
             <div className={styles.mobileServices}>
               {serviceFilters.map((service) => (
@@ -162,21 +177,28 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button 
+          <button
             className={styles.mobileNavLink}
             onClick={() => scrollToSection('work')}
           >
-            Projects
+            {t('nav.projects')}
           </button>
 
-          <button 
+          <button
             className={styles.mobileNavLink}
             onClick={() => scrollToSection('contact')}
           >
-            Contact
+            {t('nav.contact')}
           </button>
 
-          <button 
+          <button
+            className={styles.mobileLangSwitch}
+            onClick={toggleLanguage}
+          >
+            {language === 'en' ? '🌐 Español' : '🌐 English'}
+          </button>
+
+          <button
             className={styles.mobileCTA}
             onClick={openWhatsApp}
           >
