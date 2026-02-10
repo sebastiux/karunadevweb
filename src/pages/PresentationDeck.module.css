@@ -137,6 +137,23 @@
 .serviceCard {
   padding: 48px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background 0.3s ease;
+}
+
+.serviceCard:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.serviceTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.serviceEmoji {
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
 .serviceTitle {
@@ -144,7 +161,7 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #1d1d1f;
-  margin: 0 0 12px;
+  margin: 0;
 }
 
 .serviceLead {
@@ -249,12 +266,44 @@
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.deliveryFlow {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+.deliverySteps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.deliveryStep {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1d1d1f;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.stepLabel {
+  font-size: 0.95rem;
   font-weight: 500;
   color: #1d1d1f;
-  margin: 16px 0 20px;
-  letter-spacing: -0.01em;
+}
+
+.stepArrow {
+  color: #86868b;
+  font-size: 1rem;
+  margin: 0 4px;
 }
 
 .deliveryDesc {
@@ -303,6 +352,15 @@
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 24px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.ctaList li:hover {
+  background: #1d1d1f;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .ctaClosing {
@@ -391,6 +449,50 @@
   color: #86868b;
   margin: 0;
   line-height: 1.5;
+}
+
+/* Ask Karu CTA */
+.consultantCTA {
+  display: flex;
+  justify-content: center;
+}
+
+.askKaruButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.askKaruButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.askKaruButton:active {
+  transform: translateY(0);
+}
+
+.karuAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  font-size: 14px;
 }
 
 /* Inline Chat */
