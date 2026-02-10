@@ -80,6 +80,98 @@ const translations = {
     'chatbot.bookCall': 'Book a call with us via WhatsApp',
     'chatbot.online': 'Online',
     'chatbot.aiConsultant': 'AI Consultant',
+
+    // Presentation Deck
+    'deck.title': 'Karuna',
+    'deck.subtitle': 'Technology Consulting & System Architecture',
+    'deck.heroLead': 'Designing, automating, and scaling technology systems with a premium, engineering-driven approach.',
+    'deck.heroDesc': 'Karuna is a boutique technology consultancy focused on building production-ready architectures, not generic solutions. We work closely with our clients to design, validate, and implement systems that scale reliably across software, data, AI, and enterprise platforms.',
+    'deck.specialtiesTitle': 'Our Core Specialties',
+
+    // SaaS
+    'deck.saas.title': 'SaaS Product Design & Administration',
+    'deck.saas.lead': 'We design and operate SaaS platforms from architecture to production.',
+    'deck.saas.item1': 'Product architecture and system design',
+    'deck.saas.item2': 'Backend & frontend development',
+    'deck.saas.item3': 'Cloud infrastructure and deployment pipelines',
+    'deck.saas.item4': 'Observability, scaling, and operational governance',
+    'deck.saas.item5': 'Admin tooling and internal dashboards',
+    'deck.saas.closing': 'Our focus is not only building SaaS products, but ensuring they are operable, maintainable, and scalable over time.',
+
+    // LLM
+    'deck.llm.title': 'LLM Integrations',
+    'deck.llm.lead': 'We integrate Large Language Models as system components, not standalone features.',
+    'deck.llm.item1': 'LLM-driven workflows and decision engines',
+    'deck.llm.item2': 'Retrieval-Augmented Generation (RAG)',
+    'deck.llm.item3': 'Vector databases and data embedding strategies',
+    'deck.llm.item4': 'Token optimization and cost control',
+    'deck.llm.item5': 'Model evaluation and testing pipelines',
+    'deck.llm.closing': 'LLMs are treated as part of the architecture, with clear boundaries, monitoring, and performance controls.',
+
+    // Support Automation
+    'deck.support.title': 'Support Automation Using LLMs',
+    'deck.support.lead': 'We design AI-powered support systems that reduce operational load while improving response quality.',
+    'deck.support.item1': 'Automated tier-1 and tier-2 support',
+    'deck.support.item2': 'Knowledge base ingestion and contextual answering',
+    'deck.support.item3': 'Ticket classification and routing',
+    'deck.support.item4': 'Multi-channel integration (web, chat, enterprise tools)',
+    'deck.support.item5': 'Human-in-the-loop escalation models',
+    'deck.support.closing': 'These systems are designed to be auditable, explainable, and enterprise-ready.',
+
+    // SAP
+    'deck.sap.title': 'SAP Basis & GRC Documentation Automation',
+    'deck.sap.lead': 'We specialize in automation around SAP governance and operations, with a strong focus on auditability.',
+    'deck.sap.item1': 'SAP Basis operational documentation',
+    'deck.sap.item2': 'GRC role assignment and validation flows',
+    'deck.sap.item3': 'Segregation of Duties (SoD) support',
+    'deck.sap.item4': 'Evidence generation for audits',
+    'deck.sap.item5': 'Automation of repetitive governance processes',
+    'deck.sap.closing': 'Our approach reduces manual effort while improving traceability and compliance.',
+
+    // Education
+    'deck.edu.title': 'Education Services Design & Implementation',
+    'deck.edu.lead': 'We design and deploy technology-driven education platforms.',
+    'deck.edu.item1': 'Curriculum design for technical and AI-focused programs',
+    'deck.edu.item2': 'AI-assisted learning platforms',
+    'deck.edu.item3': 'Content generation and assessment automation',
+    'deck.edu.item4': 'Learning analytics and progress tracking',
+    'deck.edu.item5': 'Scalable education architectures',
+    'deck.edu.closing': 'We focus on learning systems, not just content delivery.',
+
+    // Approach
+    'deck.approach.title': 'Our Approach',
+    'deck.approach.tagline': 'High involvement. Low volume. High impact.',
+    'deck.approach.desc': 'Karuna operates under a premium consulting model. We intentionally limit the number of concurrent projects to ensure deep technical immersion and architectural rigor.',
+    'deck.approach.roleTitle': 'Our role is to:',
+    'deck.approach.role1': 'Lead system design and technical decisions',
+    'deck.approach.role2': 'Validate architectures through PoCs',
+    'deck.approach.role3': 'Orchestrate execution across specialized partners when required',
+    'deck.approach.role4': 'Ensure production alignment with client standards',
+
+    // Delivery
+    'deck.delivery.title': 'Delivery Model',
+    'deck.delivery.flow': 'Diagnosis \u2192 Architecture \u2192 Validation \u2192 Production',
+    'deck.delivery.desc': "Early stages often run in agile cloud environments for speed and validation. Final deployments are aligned with each client's security, compliance, and infrastructure standards.",
+
+    // CTA
+    'deck.cta.title': "Let's Talk",
+    'deck.cta.lead': "If you're exploring:",
+    'deck.cta.item1': 'SaaS architecture',
+    'deck.cta.item2': 'AI and LLM integration',
+    'deck.cta.item3': 'Support automation',
+    'deck.cta.item4': 'SAP governance automation',
+    'deck.cta.item5': 'Education platforms',
+    'deck.cta.closing': "We're happy to start with a technical conversation, not a sales pitch.",
+    'deck.cta.whatsapp': 'WhatsApp: +52 720 253 3388',
+    'deck.cta.linkedin': 'Reach out via LinkedIn',
+
+    // AI Consultant (deck-specific)
+    'deck.consultant.title': 'Talk to Our AI Consultant',
+    'deck.consultant.subtitle': 'Not sure where to start? Describe your challenge and Karu will help you understand how we can help.',
+    'deck.consultant.greeting': "Hi! I'm Karu, Karuna's AI consultant. Tell me about your business challenge or the system you're looking to build, and I'll help you understand how our team can help.",
+    'deck.consultant.placeholder': 'Describe your challenge or what you need...',
+    'deck.consultant.bookCall': 'Continue on WhatsApp',
+    'deck.consultant.thinking': 'Thinking...',
   },
   es: {
     // Navbar
@@ -151,6 +243,98 @@ const translations = {
     'chatbot.bookCall': 'Agenda una llamada por WhatsApp',
     'chatbot.online': 'En línea',
     'chatbot.aiConsultant': 'Consultor IA',
+
+    // Presentation Deck
+    'deck.title': 'Karuna',
+    'deck.subtitle': 'Consultoría Tecnológica & Arquitectura de Sistemas',
+    'deck.heroLead': 'Diseñando, automatizando y escalando sistemas tecnológicos con un enfoque premium orientado a ingeniería.',
+    'deck.heroDesc': 'Karuna es una consultoría tecnológica boutique enfocada en construir arquitecturas listas para producción, no soluciones genéricas. Trabajamos de cerca con nuestros clientes para diseñar, validar e implementar sistemas que escalen de manera confiable en software, datos, IA y plataformas empresariales.',
+    'deck.specialtiesTitle': 'Nuestras Especialidades',
+
+    // SaaS
+    'deck.saas.title': 'Diseño y Administración de Productos SaaS',
+    'deck.saas.lead': 'Diseñamos y operamos plataformas SaaS desde la arquitectura hasta producción.',
+    'deck.saas.item1': 'Arquitectura de producto y diseño de sistemas',
+    'deck.saas.item2': 'Desarrollo backend y frontend',
+    'deck.saas.item3': 'Infraestructura en la nube y pipelines de despliegue',
+    'deck.saas.item4': 'Observabilidad, escalamiento y gobernanza operacional',
+    'deck.saas.item5': 'Herramientas de administración y dashboards internos',
+    'deck.saas.closing': 'Nuestro enfoque no es solo construir productos SaaS, sino asegurar que sean operables, mantenibles y escalables a lo largo del tiempo.',
+
+    // LLM
+    'deck.llm.title': 'Integraciones de LLM',
+    'deck.llm.lead': 'Integramos Modelos de Lenguaje como componentes del sistema, no como funcionalidades aisladas.',
+    'deck.llm.item1': 'Flujos de trabajo y motores de decisión impulsados por LLM',
+    'deck.llm.item2': 'Generación Aumentada por Recuperación (RAG)',
+    'deck.llm.item3': 'Bases de datos vectoriales y estrategias de embedding',
+    'deck.llm.item4': 'Optimización de tokens y control de costos',
+    'deck.llm.item5': 'Pipelines de evaluación y testing de modelos',
+    'deck.llm.closing': 'Los LLMs se tratan como parte de la arquitectura, con límites claros, monitoreo y controles de rendimiento.',
+
+    // Support Automation
+    'deck.support.title': 'Automatización de Soporte con LLMs',
+    'deck.support.lead': 'Diseñamos sistemas de soporte impulsados por IA que reducen la carga operativa mientras mejoran la calidad de respuesta.',
+    'deck.support.item1': 'Soporte automatizado de nivel 1 y nivel 2',
+    'deck.support.item2': 'Ingestión de base de conocimiento y respuestas contextuales',
+    'deck.support.item3': 'Clasificación y enrutamiento de tickets',
+    'deck.support.item4': 'Integración multicanal (web, chat, herramientas empresariales)',
+    'deck.support.item5': 'Modelos de escalamiento con intervención humana',
+    'deck.support.closing': 'Estos sistemas están diseñados para ser auditables, explicables y listos para empresas.',
+
+    // SAP
+    'deck.sap.title': 'Automatización de Documentación SAP Basis y GRC',
+    'deck.sap.lead': 'Nos especializamos en automatización de gobernanza y operaciones SAP, con un fuerte enfoque en auditabilidad.',
+    'deck.sap.item1': 'Documentación operacional de SAP Basis',
+    'deck.sap.item2': 'Flujos de asignación y validación de roles GRC',
+    'deck.sap.item3': 'Soporte de Segregación de Funciones (SoD)',
+    'deck.sap.item4': 'Generación de evidencia para auditorías',
+    'deck.sap.item5': 'Automatización de procesos repetitivos de gobernanza',
+    'deck.sap.closing': 'Nuestro enfoque reduce el esfuerzo manual mientras mejora la trazabilidad y el cumplimiento.',
+
+    // Education
+    'deck.edu.title': 'Diseño e Implementación de Servicios Educativos',
+    'deck.edu.lead': 'Diseñamos y desplegamos plataformas educativas impulsadas por tecnología.',
+    'deck.edu.item1': 'Diseño curricular para programas técnicos y enfocados en IA',
+    'deck.edu.item2': 'Plataformas de aprendizaje asistidas por IA',
+    'deck.edu.item3': 'Generación de contenido y automatización de evaluaciones',
+    'deck.edu.item4': 'Analíticas de aprendizaje y seguimiento de progreso',
+    'deck.edu.item5': 'Arquitecturas educativas escalables',
+    'deck.edu.closing': 'Nos enfocamos en sistemas de aprendizaje, no solo en entrega de contenido.',
+
+    // Approach
+    'deck.approach.title': 'Nuestro Enfoque',
+    'deck.approach.tagline': 'Alta involucración. Bajo volumen. Alto impacto.',
+    'deck.approach.desc': 'Karuna opera bajo un modelo de consultoría premium. Limitamos intencionalmente el número de proyectos concurrentes para asegurar una inmersión técnica profunda y rigor arquitectónico.',
+    'deck.approach.roleTitle': 'Nuestro rol es:',
+    'deck.approach.role1': 'Liderar el diseño de sistemas y decisiones técnicas',
+    'deck.approach.role2': 'Validar arquitecturas a través de PoCs',
+    'deck.approach.role3': 'Orquestar la ejecución con socios especializados cuando sea necesario',
+    'deck.approach.role4': 'Asegurar la alineación de producción con los estándares del cliente',
+
+    // Delivery
+    'deck.delivery.title': 'Modelo de Entrega',
+    'deck.delivery.flow': 'Diagnóstico \u2192 Arquitectura \u2192 Validación \u2192 Producción',
+    'deck.delivery.desc': 'Las etapas iniciales suelen ejecutarse en entornos ágiles en la nube para velocidad y validación. Los despliegues finales se alinean con los estándares de seguridad, cumplimiento e infraestructura de cada cliente.',
+
+    // CTA
+    'deck.cta.title': 'Hablemos',
+    'deck.cta.lead': 'Si estás explorando:',
+    'deck.cta.item1': 'Arquitectura SaaS',
+    'deck.cta.item2': 'Integración de IA y LLM',
+    'deck.cta.item3': 'Automatización de soporte',
+    'deck.cta.item4': 'Automatización de gobernanza SAP',
+    'deck.cta.item5': 'Plataformas educativas',
+    'deck.cta.closing': 'Nos encanta empezar con una conversación técnica, no con un discurso de ventas.',
+    'deck.cta.whatsapp': 'WhatsApp: +52 720 253 3388',
+    'deck.cta.linkedin': 'Contáctanos por LinkedIn',
+
+    // AI Consultant (deck-specific)
+    'deck.consultant.title': 'Habla con Nuestro Consultor IA',
+    'deck.consultant.subtitle': '¿No sabes por dónde empezar? Describe tu desafío y Karu te ayudará a entender cómo podemos ayudarte.',
+    'deck.consultant.greeting': '¡Hola! Soy Karu, el consultor IA de Karuna. Cuéntame sobre tu desafío de negocio o el sistema que quieres construir, y te ayudaré a entender cómo nuestro equipo puede ayudarte.',
+    'deck.consultant.placeholder': 'Describe tu desafío o lo que necesitas...',
+    'deck.consultant.bookCall': 'Continuar por WhatsApp',
+    'deck.consultant.thinking': 'Pensando...',
   }
 };
 
