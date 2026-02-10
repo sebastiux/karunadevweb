@@ -112,7 +112,7 @@ const PresentationDeck = () => {
 
       await html2pdf()
         .set({
-          margin: [10, 14, 10, 14],
+          margin: [12, 16, 12, 16],
           filename,
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: {
@@ -120,14 +120,96 @@ const PresentationDeck = () => {
             useCORS: true,
             letterRendering: true,
             onclone: (clonedDoc: Document) => {
-              // Force all framer-motion animated elements to be fully visible
+              // 1. Force all animated elements visible and fix text rendering
               clonedDoc.querySelectorAll('*').forEach(el => {
-                const htmlEl = el as HTMLElement;
-                if (htmlEl.style) {
-                  htmlEl.style.opacity = '1';
-                  htmlEl.style.transform = 'none';
-                  htmlEl.style.transition = 'none';
+                const s = (el as HTMLElement).style;
+                if (s) {
+                  s.opacity = '1';
+                  s.transform = 'none';
+                  s.transition = 'none';
+                  s.wordSpacing = 'normal';
+                  s.letterSpacing = 'normal';
                 }
+              });
+
+              // 2. Root container — clean background, reset padding
+              const root = clonedDoc.querySelector('[data-pdf="root"]') as HTMLElement;
+              if (root) {
+                root.style.padding = '0';
+                root.style.maxWidth = 'none';
+                root.style.background = '#ffffff';
+                root.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+              }
+
+              // 3. Hero — bordered bottom, centered with extra breathing room
+              const hero = clonedDoc.querySelector('[data-pdf="hero"]') as HTMLElement;
+              if (hero) {
+                hero.style.padding = '40px 32px 36px';
+                hero.style.borderBottom = '2px solid #1d1d1f';
+                hero.style.marginBottom = '8px';
+                hero.style.textAlign = 'center';
+              }
+
+              // 4. Section headers
+              clonedDoc.querySelectorAll('[data-pdf="section-header"]').forEach(el => {
+                const s = (el as HTMLElement).style;
+                s.padding = '28px 32px 20px';
+                s.textAlign = 'center';
+              });
+
+              // 5. Service cards & section cards — bordered with padding
+              clonedDoc.querySelectorAll('[data-pdf="card"]').forEach(el => {
+                const s = (el as HTMLElement).style;
+                s.border = '1px solid #d2d2d7';
+                s.borderRadius = '10px';
+                s.padding = '28px 32px';
+                s.margin = '10px 0';
+                s.background = '#ffffff';
+                s.borderTop = '1px solid #d2d2d7';
+                s.pageBreakInside = 'avoid';
+              });
+
+              // 6. CTA section — distinct background
+              const cta = clonedDoc.querySelector('[data-pdf="cta"]') as HTMLElement;
+              if (cta) {
+                cta.style.border = '1px solid #d2d2d7';
+                cta.style.borderRadius = '10px';
+                cta.style.padding = '32px';
+                cta.style.margin = '10px 0';
+                cta.style.background = '#f9f9fb';
+                cta.style.textAlign = 'center';
+                cta.style.pageBreakInside = 'avoid';
+              }
+
+              // 7. Divider — hide (cards now provide structure)
+              clonedDoc.querySelectorAll('[class]').forEach(el => {
+                if ((el as HTMLElement).className?.includes?.('divider')) {
+                  (el as HTMLElement).style.display = 'none';
+                }
+              });
+
+              // 8. Fix list items — ensure proper spacing
+              clonedDoc.querySelectorAll('li').forEach(el => {
+                const li = el as HTMLElement;
+                li.style.paddingTop = '6px';
+                li.style.paddingBottom = '6px';
+                li.style.lineHeight = '1.6';
+              });
+
+              // 9. Fix heading letter-spacing for PDF rendering
+              clonedDoc.querySelectorAll('h1, h2, h3').forEach(el => {
+                (el as HTMLElement).style.letterSpacing = '0';
+              });
+
+              // 10. CTA pill items — add visible borders in PDF
+              clonedDoc.querySelectorAll('[data-pdf="cta"] li').forEach(el => {
+                const li = el as HTMLElement;
+                li.style.border = '1px solid #d2d2d7';
+                li.style.borderRadius = '20px';
+                li.style.padding = '6px 16px';
+                li.style.display = 'inline-block';
+                li.style.margin = '4px';
+                li.style.background = '#f5f5f7';
               });
             },
           },
@@ -263,10 +345,11 @@ const PresentationDeck = () => {
       </nav>
 
       {/* PDF-exportable content */}
-      <div ref={contentRef}>
+      <div ref={contentRef} data-pdf="root">
         {/* Hero */}
         <motion.section
           className={styles.hero}
+          data-pdf="hero"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' as const }}
@@ -280,7 +363,7 @@ const PresentationDeck = () => {
         <div className={styles.divider} />
 
         {/* Specialties Header */}
-        <motion.div className={styles.specialtiesHeader} {...stagger}>
+        <motion.div className={styles.specialtiesHeader} data-pdf="section-header" {...stagger}>
           <h2 className={styles.specialtiesTitle}>{t('deck.specialtiesTitle')}</h2>
         </motion.div>
 
@@ -289,6 +372,7 @@ const PresentationDeck = () => {
           <motion.section
             key={svc.key}
             className={styles.serviceCard}
+            data-pdf="card"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -306,7 +390,7 @@ const PresentationDeck = () => {
         ))}
 
         {/* Approach */}
-        <motion.section className={styles.approachSection} {...stagger}>
+        <motion.section className={styles.approachSection} data-pdf="card" {...stagger}>
           <h2 className={styles.specialtiesTitle}>{t('deck.approach.title')}</h2>
           <p className={styles.approachTagline}>{t('deck.approach.tagline')}</p>
           <p className={styles.approachDesc}>{t('deck.approach.desc')}</p>
@@ -320,7 +404,7 @@ const PresentationDeck = () => {
         </motion.section>
 
         {/* Delivery Model */}
-        <motion.section className={styles.deliverySection} {...stagger}>
+        <motion.section className={styles.deliverySection} data-pdf="card" {...stagger}>
           <h2 className={styles.specialtiesTitle}>{t('deck.delivery.title')}</h2>
           <div className={styles.deliverySteps}>
             {t('deck.delivery.flow').split(' \u2192 ').map((step, i, arr) => (
@@ -335,7 +419,7 @@ const PresentationDeck = () => {
         </motion.section>
 
         {/* Let's Talk CTA */}
-        <motion.section className={styles.ctaSection} {...stagger}>
+        <motion.section className={styles.ctaSection} data-pdf="cta" {...stagger}>
           <h2 className={styles.ctaTitle}>{t('deck.cta.title')}</h2>
           <p className={styles.ctaLead}>{t('deck.cta.lead')}</p>
           <ul className={styles.ctaList}>
