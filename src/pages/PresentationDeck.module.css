@@ -58,6 +58,31 @@
   background: rgba(0, 0, 0, 0.04);
 }
 
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1d1d1f;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: inherit;
+}
+
+.downloadButton:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.downloadButton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
 .backLink {
   font-size: 13px;
   font-weight: 400;
