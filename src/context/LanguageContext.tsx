@@ -90,7 +90,6 @@ const translations = {
 
     // SaaS
     'deck.saas.title': 'SaaS Product Design & Administration',
-    'deck.saas.emoji': '\u{1F680}',
     'deck.saas.lead': 'From first commit to production traffic — we design and operate SaaS platforms end to end.',
     'deck.saas.item1': 'Product architecture and system design',
     'deck.saas.item2': 'Backend & frontend development',
@@ -101,7 +100,6 @@ const translations = {
 
     // LLM
     'deck.llm.title': 'LLM Integrations',
-    'deck.llm.emoji': '\u{1F9E0}',
     'deck.llm.lead': 'We plug Large Language Models into your architecture as real system components — not science experiments.',
     'deck.llm.item1': 'LLM-driven workflows and decision engines',
     'deck.llm.item2': 'Retrieval-Augmented Generation (RAG)',
@@ -112,7 +110,6 @@ const translations = {
 
     // Support Automation
     'deck.support.title': 'Support Automation Using LLMs',
-    'deck.support.emoji': '\u{26A1}',
     'deck.support.lead': 'Your support team is drowning in tickets? We build AI systems that handle the repetitive stuff — so humans focus on what matters.',
     'deck.support.item1': 'Automated tier-1 and tier-2 support',
     'deck.support.item2': 'Knowledge base ingestion and contextual answering',
@@ -123,7 +120,6 @@ const translations = {
 
     // SAP
     'deck.sap.title': 'SAP Basis & GRC Documentation Automation',
-    'deck.sap.emoji': '\u{1F3DB}\uFE0F',
     'deck.sap.lead': 'SAP governance is complex. We automate the painful parts — documentation, role validation, audit evidence — without cutting corners.',
     'deck.sap.item1': 'SAP Basis operational documentation',
     'deck.sap.item2': 'GRC role assignment and validation flows',
@@ -134,7 +130,6 @@ const translations = {
 
     // Education
     'deck.edu.title': 'Education Services Design & Implementation',
-    'deck.edu.emoji': '\u{1F393}',
     'deck.edu.lead': 'Learning platforms that actually teach — powered by AI, designed for real outcomes.',
     'deck.edu.item1': 'Curriculum design for technical and AI-focused programs',
     'deck.edu.item2': 'AI-assisted learning platforms',
@@ -173,7 +168,6 @@ const translations = {
     // AI Consultant (deck-specific)
     'deck.consultant.title': 'Still figuring things out?',
     'deck.consultant.subtitle': 'Tell Karu what you\'re working on — our AI will point you in the right direction.',
-    'deck.consultant.cta': 'Ask Karu',
     'deck.consultant.greeting': "Hey! I'm Karu. Tell me what you're trying to build or what problem you're dealing with, and I'll tell you how Karuna can help. No fluff, I promise.",
     'deck.consultant.placeholder': "What are you working on?",
     'deck.consultant.bookCall': 'Continue on WhatsApp',
@@ -259,7 +253,6 @@ const translations = {
 
     // SaaS
     'deck.saas.title': 'Diseño y Administración de Productos SaaS',
-    'deck.saas.emoji': '\u{1F680}',
     'deck.saas.lead': 'Del primer commit al tráfico en producción — diseñamos y operamos plataformas SaaS de principio a fin.',
     'deck.saas.item1': 'Arquitectura de producto y diseño de sistemas',
     'deck.saas.item2': 'Desarrollo backend y frontend',
@@ -270,7 +263,6 @@ const translations = {
 
     // LLM
     'deck.llm.title': 'Integraciones de LLM',
-    'deck.llm.emoji': '\u{1F9E0}',
     'deck.llm.lead': 'Conectamos Modelos de Lenguaje a tu arquitectura como componentes reales del sistema — no como experimentos de laboratorio.',
     'deck.llm.item1': 'Flujos de trabajo y motores de decisión impulsados por LLM',
     'deck.llm.item2': 'Generación Aumentada por Recuperación (RAG)',
@@ -281,7 +273,6 @@ const translations = {
 
     // Support Automation
     'deck.support.title': 'Automatización de Soporte con LLMs',
-    'deck.support.emoji': '\u{26A1}',
     'deck.support.lead': '¿Tu equipo de soporte se ahoga en tickets? Construimos sistemas de IA que manejan lo repetitivo — para que los humanos se enfoquen en lo importante.',
     'deck.support.item1': 'Soporte automatizado de nivel 1 y nivel 2',
     'deck.support.item2': 'Ingestión de base de conocimiento y respuestas contextuales',
@@ -292,7 +283,6 @@ const translations = {
 
     // SAP
     'deck.sap.title': 'Automatización de Documentación SAP Basis y GRC',
-    'deck.sap.emoji': '\u{1F3DB}\uFE0F',
     'deck.sap.lead': 'La gobernanza SAP es compleja. Automatizamos las partes dolorosas — documentación, validación de roles, evidencia de auditoría — sin atajos.',
     'deck.sap.item1': 'Documentación operacional de SAP Basis',
     'deck.sap.item2': 'Flujos de asignación y validación de roles GRC',
@@ -303,7 +293,6 @@ const translations = {
 
     // Education
     'deck.edu.title': 'Diseño e Implementación de Servicios Educativos',
-    'deck.edu.emoji': '\u{1F393}',
     'deck.edu.lead': 'Plataformas de aprendizaje que realmente enseñan — impulsadas por IA, diseñadas para resultados reales.',
     'deck.edu.item1': 'Diseño curricular para programas técnicos y enfocados en IA',
     'deck.edu.item2': 'Plataformas de aprendizaje asistidas por IA',
@@ -342,7 +331,6 @@ const translations = {
     // AI Consultant (deck-specific)
     'deck.consultant.title': '¿Todavía definiendo el camino?',
     'deck.consultant.subtitle': 'Cuéntale a Karu en qué estás trabajando — nuestra IA te orientará.',
-    'deck.consultant.cta': 'Pregúntale a Karu',
     'deck.consultant.greeting': '¡Qué onda! Soy Karu. Cuéntame qué estás intentando construir o qué problema tienes, y te digo cómo Karuna puede ayudarte. Sin rodeos, prometido.',
     'deck.consultant.placeholder': '¿En qué estás trabajando?',
     'deck.consultant.bookCall': 'Continuar por WhatsApp',

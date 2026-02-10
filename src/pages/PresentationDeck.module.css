@@ -144,24 +144,12 @@
   background: rgba(0, 0, 0, 0.015);
 }
 
-.serviceTitleRow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.serviceEmoji {
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
 .serviceTitle {
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #1d1d1f;
-  margin: 0;
+  margin: 0 0 12px;
 }
 
 .serviceLead {
@@ -449,50 +437,6 @@
   color: #86868b;
   margin: 0;
   line-height: 1.5;
-}
-
-/* Ask Karu CTA */
-.consultantCTA {
-  display: flex;
-  justify-content: center;
-}
-
-.askKaruButton {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 32px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border: none;
-  border-radius: 16px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.askKaruButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-.askKaruButton:active {
-  transform: translateY(0);
-}
-
-.karuAvatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  font-weight: 600;
-  font-size: 14px;
 }
 
 /* Inline Chat */
