@@ -727,6 +727,14 @@
   transform: translateX(1px);
 }
 
+/* PDF contact text (hidden on web, shown in PDF via onclone) */
+.pdfContactLine {
+  font-size: 15px;
+  color: #1d1d1f;
+  margin: 6px 0;
+  font-weight: 500;
+}
+
 /* Footer */
 .footer {
   text-align: center;
