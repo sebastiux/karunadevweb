@@ -58,31 +58,6 @@
   background: rgba(0, 0, 0, 0.04);
 }
 
-.downloadButton {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #1d1d1f;
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  font-family: inherit;
-}
-
-.downloadButton:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-.downloadButton:disabled {
-  opacity: 0.5;
-  cursor: wait;
-}
-
 .backLink {
   font-size: 13px;
   font-weight: 400;
@@ -100,8 +75,6 @@
 .hero {
   padding: 80px 0 60px;
   text-align: center;
-  page-break-inside: avoid;
-  break-inside: avoid;
 }
 
 .heroTitle {
@@ -150,7 +123,6 @@
 .specialtiesHeader {
   text-align: center;
   padding: 60px 0 48px;
-  page-break-after: avoid;
 }
 
 .specialtiesTitle {
@@ -166,8 +138,6 @@
   padding: 48px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   transition: background 0.3s ease;
-  page-break-inside: avoid;
-  break-inside: avoid;
 }
 
 .serviceCard:hover {
@@ -228,8 +198,6 @@
 .approachSection {
   padding: 60px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
-  page-break-inside: avoid;
-  break-inside: avoid;
 }
 
 .approachTagline {
@@ -284,8 +252,6 @@
 .deliverySection {
   padding: 48px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
-  page-break-inside: avoid;
-  break-inside: avoid;
 }
 
 .deliverySteps {
@@ -341,8 +307,6 @@
   padding: 60px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   text-align: center;
-  page-break-inside: avoid;
-  break-inside: avoid;
 }
 
 .ctaTitle {
@@ -725,14 +689,6 @@
 
 .chatSendButton svg {
   transform: translateX(1px);
-}
-
-/* PDF contact text (hidden on web, shown in PDF via onclone) */
-.pdfContactLine {
-  font-size: 15px;
-  color: #1d1d1f;
-  margin: 6px 0;
-  font-weight: 500;
 }
 
 /* Footer */
