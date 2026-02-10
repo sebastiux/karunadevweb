@@ -112,13 +112,24 @@ const PresentationDeck = () => {
 
       await html2pdf()
         .set({
-          margin: [12, 16, 12, 16],
+          margin: [10, 14, 10, 14],
           filename,
-          image: { type: 'jpeg', quality: 0.95 },
+          image: { type: 'jpeg', quality: 0.98 },
           html2canvas: {
             scale: 2,
             useCORS: true,
             letterRendering: true,
+            onclone: (clonedDoc: Document) => {
+              // Force all framer-motion animated elements to be fully visible
+              clonedDoc.querySelectorAll('*').forEach(el => {
+                const htmlEl = el as HTMLElement;
+                if (htmlEl.style) {
+                  htmlEl.style.opacity = '1';
+                  htmlEl.style.transform = 'none';
+                  htmlEl.style.transition = 'none';
+                }
+              });
+            },
           },
           jsPDF: {
             unit: 'mm',
