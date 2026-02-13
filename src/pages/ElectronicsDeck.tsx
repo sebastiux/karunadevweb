@@ -10,17 +10,17 @@ interface ChatMessage {
   content: string;
 }
 
-const ELEC_SYSTEM_PROMPT = `You are Karu, the AI consultant for Karuna Electronics — the electronics and control division of Karuna, a technology consultancy.
+const ELEC_SYSTEM_PROMPT = `You are Karu, the AI consultant for Karuna Electronics — the control engineering, applied electronics, and intelligent infrastructure division of Karuna.
 
-Karuna Electronics core services are:
-1. IoT Solutions & Connected Systems — sensor networks, telemetry, cloud-connected devices, MQTT/LoRa, edge gateways, industrial IoT
-2. Control Systems Design & Installation — PLCs, SCADA, HMI panels, industrial automation, process control, motor drives
-3. Image Processing & Computer Vision — camera systems, real-time video analytics, quality inspection, OCR, defect detection, AI at the edge
-4. Security & Surveillance Systems — CCTV design/installation, access control, intrusion detection, perimeter security, integrated monitoring
-5. Embedded Systems & Custom Electronics — PCB design, firmware development, prototyping, edge computing, custom sensor boards
+Karuna Electronics designs and implements advanced solutions for organizations seeking operational efficiency, technological resilience, and real-time traceability. Core services:
 
-Model: End-to-end project execution — from design and prototyping through installation, commissioning, and ongoing support.
-Delivery: Assessment → Design → Prototyping → Installation → Commissioning.
+1. Industrial IoT Architectures — sensor networks, edge computing, cloud integration, industrial protocols (MQTT, Modbus TCP/IP, OPC-UA), predictive maintenance, multi-site remote monitoring
+2. Automation & Control Systems — PLC programming (Siemens, Allen-Bradley, Schneider Electric), SCADA/HMI, electrical panel design/fabrication, VFDs, legacy machinery digitalization. Turnkey with FAT/SAT testing.
+3. Computer Vision & Edge Analytics — automated quality control, label verification, in-line defect detection, PLC/MES integration, AI-powered image processing at the edge
+4. Electronic Security Infrastructure — enterprise CCTV, Hikvision integration, biometric/RFID access control, perimeter protection, emergency protocols. Security as critical infrastructure.
+5. Applied Electronics & Embedded Systems — custom PCB design, embedded firmware, edge modules, custom sensor interfaces, pilot batch production
+
+Model: End-to-end execution — assessment, architecture design, prototyping, field implementation, commissioning, and operational handover.
 
 Your job:
 1. Listen to the user's challenge or need related to electronics, IoT, control, vision, or security
@@ -165,7 +165,7 @@ const ElectronicsDeck = () => {
   const toggleLanguage = () => setLanguage(language === 'en' ? 'es' : 'en');
 
   const services = [
-    { key: 'iot', items: 5 },
+    { key: 'iot', items: 6 },
     { key: 'control', items: 5 },
     { key: 'vision', items: 5 },
     { key: 'security', items: 5 },
