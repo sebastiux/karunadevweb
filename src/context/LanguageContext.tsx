@@ -172,6 +172,98 @@ const translations = {
     'deck.consultant.placeholder': "What are you working on?",
     'deck.consultant.bookCall': 'Continue on WhatsApp',
     'deck.consultant.thinking': 'Thinking...',
+
+    // Electronics Deck
+    'elec.title': 'Karuna Electronics',
+    'elec.subtitle': 'Electronics, Control & Security Systems',
+    'elec.heroLead': 'We design, install, and commission electronic control systems, IoT infrastructure, and intelligent security solutions.',
+    'elec.heroDesc': 'Karuna Electronics is the hardware and control division of Karuna. We deliver end-to-end projects — from circuit design and prototyping through installation and commissioning — in IoT, industrial control, computer vision, and physical security.',
+    'elec.specialtiesTitle': 'Our Capabilities',
+
+    // IoT
+    'elec.iot.title': 'IoT Solutions & Connected Systems',
+    'elec.iot.lead': 'We design and deploy IoT architectures that connect physical assets to the cloud with reliability and real-time visibility.',
+    'elec.iot.item1': 'Sensor network design and deployment (temperature, humidity, pressure, vibration, etc.)',
+    'elec.iot.item2': 'Connectivity protocols — MQTT, LoRa, Zigbee, Wi-Fi, cellular (4G/5G)',
+    'elec.iot.item3': 'Edge gateways and local data processing',
+    'elec.iot.item4': 'Cloud telemetry dashboards and real-time alerting',
+    'elec.iot.item5': 'Predictive maintenance and remote asset monitoring',
+    'elec.iot.closing': 'Every IoT deployment is designed for reliability, security, and seamless integration with your existing infrastructure.',
+
+    // Control Systems
+    'elec.control.title': 'Control Systems Design & Installation',
+    'elec.control.lead': 'We engineer and install industrial control systems — from single-machine automation to full-plant process control.',
+    'elec.control.item1': 'PLC programming and panel design (Siemens, Allen-Bradley, Schneider)',
+    'elec.control.item2': 'SCADA system integration and HMI panel configuration',
+    'elec.control.item3': 'Motor drives, VFDs, and motion control',
+    'elec.control.item4': 'Process instrumentation and field device integration',
+    'elec.control.item5': 'Electrical control panel fabrication and installation',
+    'elec.control.closing': 'We deliver turnkey control systems — designed, built, installed, and commissioned on-site.',
+
+    // Image Processing & Computer Vision
+    'elec.vision.title': 'Image Processing & Computer Vision',
+    'elec.vision.lead': 'We install and configure camera-based systems for real-time visual inspection, analytics, and intelligent detection.',
+    'elec.vision.item1': 'Industrial camera systems and lens selection',
+    'elec.vision.item2': 'Real-time defect detection and quality inspection',
+    'elec.vision.item3': 'OCR, barcode, and label verification systems',
+    'elec.vision.item4': 'AI-powered video analytics at the edge',
+    'elec.vision.item5': 'Integration with PLCs and production line control',
+    'elec.vision.closing': 'Our vision systems are designed for production environments — reliable, fast, and integrated with your existing automation.',
+
+    // Security & Surveillance
+    'elec.security.title': 'Security & Surveillance Systems',
+    'elec.security.lead': 'We design and install comprehensive security systems — from CCTV infrastructure to access control and perimeter protection.',
+    'elec.security.item1': 'CCTV system design, camera selection, and installation',
+    'elec.security.item2': 'Access control systems (biometric, RFID, PIN)',
+    'elec.security.item3': 'Intrusion detection and perimeter security',
+    'elec.security.item4': 'Centralized monitoring and video management (VMS)',
+    'elec.security.item5': 'Integration with alarm systems and emergency protocols',
+    'elec.security.closing': 'Security is not just cameras — we design layered systems that protect your people, assets, and operations.',
+
+    // Embedded Systems
+    'elec.embedded.title': 'Embedded Systems & Custom Electronics',
+    'elec.embedded.lead': 'We design custom electronic boards and embedded firmware for specialized applications that off-the-shelf products can\'t solve.',
+    'elec.embedded.item1': 'Custom PCB design and prototyping',
+    'elec.embedded.item2': 'Firmware development (STM32, ESP32, Arduino, Raspberry Pi)',
+    'elec.embedded.item3': 'Edge computing modules for real-time processing',
+    'elec.embedded.item4': 'Custom sensor interface boards',
+    'elec.embedded.item5': 'Small-batch manufacturing coordination',
+    'elec.embedded.closing': 'From concept to prototype to production — we build the hardware your project needs.',
+
+    // Approach
+    'elec.approach.title': 'How We Work',
+    'elec.approach.tagline': 'Design it right. Build it once. Install it to last.',
+    'elec.approach.desc': 'Karuna Electronics handles every phase — from initial assessment and engineering design through physical installation and commissioning. We don\'t hand off specs and walk away.',
+    'elec.approach.roleTitle': 'What that looks like:',
+    'elec.approach.role1': 'On-site assessment and requirements engineering',
+    'elec.approach.role2': 'Detailed system design with component selection',
+    'elec.approach.role3': 'Prototyping and validation before full deployment',
+    'elec.approach.role4': 'Physical installation, wiring, commissioning, and handover',
+
+    // Delivery
+    'elec.delivery.title': 'How We Deliver',
+    'elec.delivery.flow': 'Assessment \u2192 Design \u2192 Prototyping \u2192 Installation \u2192 Commissioning',
+    'elec.delivery.desc': 'We start with a site visit and technical assessment. From there, we engineer the solution, validate with prototypes when needed, install on-site, and commission until everything runs as specified.',
+
+    // CTA
+    'elec.cta.title': 'Ready to Talk?',
+    'elec.cta.lead': 'If any of these sound like your world:',
+    'elec.cta.item1': 'IoT & connected systems',
+    'elec.cta.item2': 'Industrial control & automation',
+    'elec.cta.item3': 'Computer vision & inspection',
+    'elec.cta.item4': 'Security & surveillance',
+    'elec.cta.item5': 'Custom electronics & embedded',
+    'elec.cta.closing': 'No sales pitch. Just an engineering conversation about your project.',
+    'elec.cta.whatsapp': 'WhatsApp: +52 720 253 3388',
+    'elec.cta.linkedin': 'Reach out via LinkedIn',
+
+    // AI Consultant
+    'elec.consultant.title': 'Have a project in mind?',
+    'elec.consultant.subtitle': 'Tell Karu about your electronics or control challenge — our AI will point you in the right direction.',
+    'elec.consultant.greeting': "Hey! I'm Karu. Tell me about your electronics, IoT, control, or security project — I'll explain how Karuna Electronics can help. No fluff, just engineering.",
+    'elec.consultant.placeholder': 'Describe your project...',
+    'elec.consultant.bookCall': 'Continue on WhatsApp',
+    'elec.consultant.thinking': 'Thinking...',
   },
   es: {
     // Navbar
@@ -335,6 +427,98 @@ const translations = {
     'deck.consultant.placeholder': '¿En qué estás trabajando?',
     'deck.consultant.bookCall': 'Continuar por WhatsApp',
     'deck.consultant.thinking': 'Pensando...',
+
+    // Electronics Deck
+    'elec.title': 'Karuna Electronics',
+    'elec.subtitle': 'Electrónica, Control & Sistemas de Seguridad',
+    'elec.heroLead': 'Diseñamos, instalamos y comisionamos sistemas de control electrónico, infraestructura IoT y soluciones inteligentes de seguridad.',
+    'elec.heroDesc': 'Karuna Electronics es la división de hardware y control de Karuna. Ejecutamos proyectos de principio a fin — desde el diseño de circuitos y prototipado hasta la instalación y puesta en marcha — en IoT, control industrial, visión artificial y seguridad física.',
+    'elec.specialtiesTitle': 'Nuestras Capacidades',
+
+    // IoT
+    'elec.iot.title': 'Soluciones IoT & Sistemas Conectados',
+    'elec.iot.lead': 'Diseñamos y desplegamos arquitecturas IoT que conectan activos físicos a la nube con confiabilidad y visibilidad en tiempo real.',
+    'elec.iot.item1': 'Diseño y despliegue de redes de sensores (temperatura, humedad, presión, vibración, etc.)',
+    'elec.iot.item2': 'Protocolos de conectividad — MQTT, LoRa, Zigbee, Wi-Fi, celular (4G/5G)',
+    'elec.iot.item3': 'Gateways de borde y procesamiento local de datos',
+    'elec.iot.item4': 'Dashboards de telemetría en la nube y alertas en tiempo real',
+    'elec.iot.item5': 'Mantenimiento predictivo y monitoreo remoto de activos',
+    'elec.iot.closing': 'Cada despliegue IoT está diseñado para confiabilidad, seguridad e integración sin fisuras con tu infraestructura existente.',
+
+    // Control Systems
+    'elec.control.title': 'Diseño e Instalación de Sistemas de Control',
+    'elec.control.lead': 'Diseñamos e instalamos sistemas de control industrial — desde automatización de una sola máquina hasta control de procesos de planta completa.',
+    'elec.control.item1': 'Programación de PLCs y diseño de tableros (Siemens, Allen-Bradley, Schneider)',
+    'elec.control.item2': 'Integración de sistemas SCADA y configuración de paneles HMI',
+    'elec.control.item3': 'Variadores de frecuencia, VFDs y control de movimiento',
+    'elec.control.item4': 'Instrumentación de procesos e integración de dispositivos de campo',
+    'elec.control.item5': 'Fabricación e instalación de tableros de control eléctrico',
+    'elec.control.closing': 'Entregamos sistemas de control llave en mano — diseñados, construidos, instalados y comisionados en sitio.',
+
+    // Image Processing & Computer Vision
+    'elec.vision.title': 'Procesamiento de Imágenes & Visión Artificial',
+    'elec.vision.lead': 'Instalamos y configuramos sistemas basados en cámaras para inspección visual en tiempo real, analítica y detección inteligente.',
+    'elec.vision.item1': 'Sistemas de cámaras industriales y selección de ópticas',
+    'elec.vision.item2': 'Detección de defectos en tiempo real e inspección de calidad',
+    'elec.vision.item3': 'Sistemas de OCR, código de barras y verificación de etiquetas',
+    'elec.vision.item4': 'Analítica de video con IA en el borde (edge)',
+    'elec.vision.item5': 'Integración con PLCs y control de líneas de producción',
+    'elec.vision.closing': 'Nuestros sistemas de visión están diseñados para entornos de producción — confiables, rápidos e integrados con tu automatización existente.',
+
+    // Security & Surveillance
+    'elec.security.title': 'Sistemas de Seguridad & Vigilancia',
+    'elec.security.lead': 'Diseñamos e instalamos sistemas de seguridad integrales — desde infraestructura CCTV hasta control de acceso y protección perimetral.',
+    'elec.security.item1': 'Diseño de sistemas CCTV, selección de cámaras e instalación',
+    'elec.security.item2': 'Sistemas de control de acceso (biométrico, RFID, PIN)',
+    'elec.security.item3': 'Detección de intrusión y seguridad perimetral',
+    'elec.security.item4': 'Monitoreo centralizado y gestión de video (VMS)',
+    'elec.security.item5': 'Integración con sistemas de alarma y protocolos de emergencia',
+    'elec.security.closing': 'La seguridad no son solo cámaras — diseñamos sistemas por capas que protegen a tu gente, activos y operaciones.',
+
+    // Embedded Systems
+    'elec.embedded.title': 'Sistemas Embebidos & Electrónica a Medida',
+    'elec.embedded.lead': 'Diseñamos tarjetas electrónicas y firmware embebido para aplicaciones especializadas que los productos comerciales no resuelven.',
+    'elec.embedded.item1': 'Diseño y prototipado de PCBs a medida',
+    'elec.embedded.item2': 'Desarrollo de firmware (STM32, ESP32, Arduino, Raspberry Pi)',
+    'elec.embedded.item3': 'Módulos de cómputo en el borde para procesamiento en tiempo real',
+    'elec.embedded.item4': 'Tarjetas de interfaz de sensores personalizadas',
+    'elec.embedded.item5': 'Coordinación de manufactura en lotes pequeños',
+    'elec.embedded.closing': 'Del concepto al prototipo a producción — construimos el hardware que tu proyecto necesita.',
+
+    // Approach
+    'elec.approach.title': 'Cómo Trabajamos',
+    'elec.approach.tagline': 'Diseñar bien. Construir una vez. Instalar para que dure.',
+    'elec.approach.desc': 'Karuna Electronics maneja cada fase — desde la evaluación inicial y el diseño de ingeniería hasta la instalación física y puesta en marcha. No entregamos especificaciones y nos vamos.',
+    'elec.approach.roleTitle': 'Cómo se ve eso:',
+    'elec.approach.role1': 'Evaluación en sitio e ingeniería de requerimientos',
+    'elec.approach.role2': 'Diseño detallado del sistema con selección de componentes',
+    'elec.approach.role3': 'Prototipado y validación antes del despliegue completo',
+    'elec.approach.role4': 'Instalación física, cableado, comisionamiento y entrega',
+
+    // Delivery
+    'elec.delivery.title': 'Cómo Entregamos',
+    'elec.delivery.flow': 'Evaluación \u2192 Diseño \u2192 Prototipado \u2192 Instalación \u2192 Comisionamiento',
+    'elec.delivery.desc': 'Comenzamos con una visita al sitio y evaluación técnica. A partir de ahí, diseñamos la solución, validamos con prototipos cuando es necesario, instalamos en sitio y comisionamos hasta que todo funcione según lo especificado.',
+
+    // CTA
+    'elec.cta.title': '¿Listo para hablar?',
+    'elec.cta.lead': 'Si algo de esto suena a tu mundo:',
+    'elec.cta.item1': 'IoT y sistemas conectados',
+    'elec.cta.item2': 'Control industrial y automatización',
+    'elec.cta.item3': 'Visión artificial e inspección',
+    'elec.cta.item4': 'Seguridad y vigilancia',
+    'elec.cta.item5': 'Electrónica a medida y embebidos',
+    'elec.cta.closing': 'Sin discurso de ventas. Solo una conversación de ingeniería sobre tu proyecto.',
+    'elec.cta.whatsapp': 'WhatsApp: +52 720 253 3388',
+    'elec.cta.linkedin': 'Contáctanos por LinkedIn',
+
+    // AI Consultant
+    'elec.consultant.title': '¿Tienes un proyecto en mente?',
+    'elec.consultant.subtitle': 'Cuéntale a Karu sobre tu reto de electrónica o control — nuestra IA te orientará.',
+    'elec.consultant.greeting': '¡Hola! Soy Karu. Cuéntame sobre tu proyecto de electrónica, IoT, control o seguridad — te explico cómo Karuna Electronics puede ayudarte. Sin rodeos, pura ingeniería.',
+    'elec.consultant.placeholder': 'Describe tu proyecto...',
+    'elec.consultant.bookCall': 'Continuar por WhatsApp',
+    'elec.consultant.thinking': 'Pensando...',
   }
 };
 

@@ -7,6 +7,7 @@ import ProjectCases from './components/sections/ProjectCases'
 import Contact from './components/sections/Contact'
 import AIChatbot from './components/ui/AIChatbot'
 import PresentationDeck from './pages/PresentationDeck'
+import ElectronicsDeck from './pages/ElectronicsDeck'
 
 function HomePage() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/presentationdeck" element={<PresentationDeck />} />
+          <Route path="/electronicsdeck" element={<ElectronicsDeck />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
