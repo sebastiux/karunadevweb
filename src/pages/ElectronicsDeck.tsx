@@ -32,11 +32,6 @@ Keep responses concise (2-4 sentences max). Be friendly and direct — talk like
 const ElectronicsDeck = () => {
   const { t, language, setLanguage } = useLanguage();
 
-  // Set Spanish as default language for this deck
-  useEffect(() => {
-    setLanguage('es');
-  }, []);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
